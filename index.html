@@ -1,0 +1,713 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SAX CRM | Vende mais imóveis com a equipe que você já tem</title>
+<meta name="description" content="CRM para imobiliárias: leads dos portais, funil de negócios, agenda de visitas, propostas e contrato assinado por link. Feito para o corretor usar e o gestor acompanhar.">
+<meta name="theme-color" content="#140634">
+<meta property="og:title" content="SAX CRM para imobiliárias">
+<meta property="og:description" content="Do lead do portal ao contrato assinado, num lugar só.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAF2klEQVR4nO2XXYxVVxXHf2vvfc+9l2GGQqYMWJgyfDjFSgM1GmgFwZJAta1YRaQYLBqaGKpoiIkoUSlpaZtIY7APBAv9oC+QTNqS8qFtbIUMH9FGI4TCDJQyA8www8cId+499569lw+3M8NQqi8MvvT/ds5Ze///Z6+1139vmc9Wu43v+Dlsmu5MZiWi0xQ/BBBuLFSwXajsS0Jh7W5+sGc+W60AzDGbH42kYgNoFCii6A3mLkMQDBGgxZLGj+0K339J5rrNU62mGkEkkHhB7ICwfwRFvcFZIHgp3mtMME8YUhIoDTg5gCA2UPIGV+ZWkamBogpmwMn7RBgbKKqKTHUClQOV8/8GRUWg0tx05mvwqQB39YOIIp9QD0HLWgVFpH+MIqjKNXMIQfv3sqvH9szXK8BIIE4ikv6aegkyJsaZBB8ssY/QqxqlJZB2MSi9c1g8GRv3xolov7FZU0BEy2yCkksGUXvLaaqHXEBDf+WRK9HcNobz+aFURVeorzmOJaAIRgKXCxU0nxuDMUrdraeorrpIV66S5vY6nEkwEij6iIoox8SaJjIu5kjrBOIkwhkJ5JJBfGPKbh6b+yrZikJ/F4igtXkkP9z0O+4Y2cwv5j1P7YjTfWunoLHw9j++zNM7HicdFVnz3Wex6cCrf36YjXseocJ1U5Hp5pmFTzKh/iR7D3yJv394FylTwhV9xGeq2lk25yVcKuG9w5PoylfijMer4VL3ELbuewAjnl/Pe44RtR20t1TTfK4OgHQqZsrth5l97x7OXKzhub1LebZhGSsXrGfhrNd4/+w4djXPYt1Dv2VC/Uk+aKrl6e3LEFUQcIlabqnowkUJue4sm95ZwMnO0Vjx+GA5nwxFUOZMeJcRt3Xw4clR/HzLKtpyw0lRIk+ab07azYr5G5j5uX1sO/AAO4/MYuw7J1nw9e0sv/+P3H3kENO/eJDCxTRPvf44+VKGQS5PUIPL2JjjHbfz/qnx3FHfzB+WroIABMj7DAebJvPk9p8QpUpoJLx34vOcydVwa/oCXg1RUmJ/090klx1V2Ss4kzDY5njhrwvxapl1VyMz72yk6UQdG/+0iOMdYxjscngtd34nonifYk3Dch6duY3a6tM4SQgYaqo6+cq0/bR2jORo2ziQnvKQ3vyLKNZ4SsGWXyAISggGHyyqBkUoJY58MVPeoiL07HYX1JC2Me3/Hs7KN1aSIcYS6GIw35vUwE8f2cido49xqKUeKSqT6w4xavBZzl4ZjsVTIkUmFAgfERnxdPlh/Gj6Kyx6sIGuM1U0HvsC98/4C2ur1/LjTWtoOX8b2Z4UGAnEPs3wyg6W3bOZmspOBEUFxlS34sTTeXkYB1umcLalhjFjW3l+yUqOto1HUCJX4oW3F6IqRK7EhcJQZk/Yw6LZDdAN695cyptN91ER5ZkxbT+r5v2e5S8/QcmncCYpr0AmKvDMwqcYPf4MFPtWGA8fnKjllb3fwgfLbxpWsOLBDdSPOs49NX8DAwf/OZmjF8bx1r+mM2PiASaPOsyvvr0eRdjy1sO82zSNGtfJul1LGTH0HJ+deIJfPrSe1a/9rJzMuWaLDory1I88TpxEfW1TwKvhRFst3aUsWVegO8mStkXqhp8iGxXojrMcaxuHNR4URg5tJ+2KDKu8xKUrVTS11xHZUl8jSucYW9NCZIscOT2eQimNfM2+rEENhZD+mA8IStoUMSYQVLASCGqIfZqAYFAyttAbXfQORfpasYv7eYQPljhcpxUbCQx2uY95AFCuYhWEPgPJunzv9553PS0bIEPMtWakKljxVLjufuPc9Sb6X/ik2J6/Va5/or/aNXvwfz8PfCrAKFwW5KYfi6Xsh5eNKPsMkSjB3yxyJXhDJKjuMxhWBxIMKavogIsoX81SNpAgRlabHcniRlW/xGBjR8bKDb8U90EQHBlrsHGixSU7ksWNZj5b7Y6w+MXE5+8L6neCdAEDURMK5lJQv9P74ld3hyUvzmer/Q/AEaB55XpoiwAAAABJRU5ErkJggg==">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --roxo:#4a03a2;--roxo-escuro:#2b0166;--tinta:#1a0645;--laranja:#ff7a00;--laranja-claro:#ffe3c7;
+  --lilas:#fff4e8;--lilas2:#ead6bf;--branco:#fff4e8;--noite:#140634;--cinza:#6b6280;--bege:#f6e5d0;--cartao:#fffaf3;--texto:#3d3456;--suave:#6f6688;--verde:#1fa855;
+  --max:1160px;--pad:24px;--r:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:Archivo,system-ui,sans-serif;font-variation-settings:"wdth" 100;color:var(--texto);background:var(--noite);line-height:1.6;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:3px solid var(--laranja);outline-offset:3px;border-radius:6px}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+h1,h2,h3{color:var(--tinta);font-stretch:72%;font-variation-settings:"wdth" 72;font-weight:800;line-height:1.02;letter-spacing:-.01em}
+h2{font-size:clamp(34px,5vw,60px);max-width:16ch}
+.intro{font-size:19px;max-width:56ch;margin-top:16px;color:var(--suave)}
+section{padding-top:110px;padding-bottom:110px}
+
+/* botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 26px;border-radius:12px;font-weight:700;font-size:17px;text-decoration:none;transition:transform .15s,background .2s,box-shadow .2s}
+.btn svg{width:22px;height:22px;flex:none}
+.btn-laranja{background:var(--laranja);color:#1f0b00;box-shadow:0 5px 0 #c25900}
+.btn-laranja:hover{transform:translateY(-2px);box-shadow:0 7px 0 #c25900}
+.btn-laranja:active{transform:translateY(4px);box-shadow:0 1px 0 #c25900}
+.btn-roxo{background:var(--tinta);color:#fff}
+.btn-roxo:hover{background:var(--roxo)}
+.link{font-weight:700;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:5px}
+
+/* header */
+.topo{position:sticky;top:0;z-index:50;background:rgba(20,6,52,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
+.topo .wrap{display:flex;align-items:center;gap:28px;height:72px}
+.logo{display:flex;align-items:center;gap:10px;color:var(--laranja);text-decoration:none}
+.logo svg{width:84px}
+.logo span{font-weight:700;color:#fff;font-size:15px}
+.nav{display:flex;gap:24px;margin-left:auto;font-size:15px;font-weight:600}
+.nav a{text-decoration:none;color:rgba(255,255,255,.82)}
+.nav a:hover{color:#fff}
+.topo .btn{min-height:44px;padding:0 18px;font-size:15px;box-shadow:0 3px 0 #c25900}
+
+/* hero */
+.hero{background:var(--noite);color:#fff;padding-top:80px;padding-bottom:0;overflow:hidden;position:relative}
+.hero::after{content:"";position:absolute;width:460px;height:460px;right:-120px;top:120px;border-radius:50%;background:rgba(255,122,0,.22);filter:blur(90px);pointer-events:none}
+.hero::before{content:"";position:absolute;width:680px;height:680px;left:-200px;top:-160px;border-radius:50%;background:rgba(93,20,196,.6);filter:blur(90px);pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:end}
+.hero .wrap>*{min-width:0}
+.hero-txt{padding-bottom:90px}
+.hero h1{color:#fff;font-size:clamp(44px,6.6vw,86px);max-width:12ch}
+.hero p{font-size:20px;color:rgba(255,255,255,.82);max-width:46ch;margin-top:22px}
+.hero .acoes{display:flex;flex-wrap:wrap;align-items:center;gap:18px 26px;margin-top:34px}
+.hero .link{color:#fff}
+.hero .fatos{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:38px;font-size:15px;color:rgba(255,255,255,.75)}
+.hero .fatos span{display:flex;align-items:center;gap:8px}
+.hero .fatos svg{width:18px;height:18px;color:var(--laranja)}
+
+/* placa */
+.placa-cena{position:relative;height:520px;display:flex;justify-content:center}
+.poste{position:absolute;bottom:0;width:18px;height:330px;background:linear-gradient(90deg,#d9cfe9,#fff 40%,#cbbfe0);border-radius:4px 4px 0 0}
+.placa{position:absolute;top:40px;width:min(400px,92%);background:var(--laranja);border-radius:10px;padding:30px 28px 26px;color:#fff;box-shadow:0 30px 60px rgba(20,0,60,.45),inset 0 0 0 6px rgba(255,255,255,.95);transform-origin:50% 0;animation:balanca 4s ease-in-out 2.2s infinite}
+.placa::before,.placa::after{content:"";position:absolute;top:-34px;width:3px;height:36px;background:#e9e2f5}
+.placa::before{left:30%}.placa::after{right:30%}
+.placa .vende{font-stretch:62%;font-variation-settings:"wdth" 62;font-weight:900;font-size:clamp(56px,6.4vw,84px);line-height:.9;letter-spacing:.01em;text-align:center;white-space:nowrap}
+.placa .linha{height:4px;background:#fff;margin:14px 0}
+.placa .tel{display:flex;justify-content:space-between;align-items:center;gap:12px;font-weight:700;font-size:16px}
+.placa .tel svg{width:70px;color:#fff}
+.vendido{position:absolute;left:50%;top:64%;width:112%;padding:6px 0;background:var(--branco);color:var(--roxo);text-align:center;font-stretch:62%;font-variation-settings:"wdth" 62;font-weight:900;font-size:clamp(34px,4vw,48px);letter-spacing:.06em;line-height:1;box-shadow:0 10px 24px rgba(0,0,0,.25);transform:translate(-50%,-50%) rotate(-9deg) scale(1);border-top:5px solid var(--roxo);border-bottom:5px solid var(--roxo)}
+.anima .vendido{opacity:0;animation:carimbo .5s cubic-bezier(.2,1.6,.4,1) 1.1s forwards}
+@keyframes carimbo{from{opacity:0;transform:translate(-50%,-50%) rotate(-4deg) scale(1.7)}to{opacity:1;transform:translate(-50%,-50%) rotate(-9deg) scale(1)}}
+@keyframes balanca{0%,100%{transform:rotate(0)}50%{transform:rotate(-1.2deg)}}
+.grama{position:absolute;left:-40px;right:-40px;bottom:0;height:22px;background:#2a0c66;border-radius:50% 50% 0 0/100% 100% 0 0}
+.aviso-lead{position:absolute;right:0;bottom:70px;display:flex;align-items:center;gap:12px;background:var(--branco);color:var(--tinta);border-radius:12px;padding:12px 16px;box-shadow:0 18px 40px rgba(20,0,60,.35);font-size:14px;max-width:270px}
+.anima .aviso-lead{opacity:0;animation:sobe .5s ease-out 1.8s forwards}
+.aviso-lead i{flex:none;width:36px;height:36px;border-radius:10px;background:#e6f7ed;color:var(--verde);display:grid;place-items:center;font-style:normal;font-weight:900;font-size:18px}
+.aviso-lead b{display:block}
+.aviso-lead small{color:var(--suave)}
+@keyframes sobe{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+/* ---------- simulador ---------- */
+.sim{display:flex;flex-direction:column;gap:14px}
+.sim-top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.sim-top b{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{padding:8px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.18);font-size:14px;font-weight:600;color:rgba(255,255,255,.8);transition:.2s}
+.chip:hover{border-color:rgba(255,255,255,.4)}
+.chip[aria-pressed=true]{background:#fff;color:var(--roxo);border-color:#fff}
+.tela-wrap{position:relative;width:100%}
+.tela{position:absolute;left:0;top:0;width:620px;transform-origin:0 0;border-radius:18px;overflow:hidden;background:#f4f1fa;color:var(--tinta);box-shadow:0 40px 90px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.12)}
+.barra-nav{height:34px;display:flex;align-items:center;gap:7px;padding:0 14px;background:#e9e4f3}
+.barra-nav i{width:10px;height:10px;border-radius:50%;background:#d3cbe3}
+.barra-nav i:nth-child(1){background:#ff5f57}.barra-nav i:nth-child(2){background:#febc2e}.barra-nav i:nth-child(3){background:#28c840}
+.barra-nav span{margin-left:12px;flex:1;height:20px;border-radius:6px;background:#fff;font-size:11px;color:#8a80a0;display:flex;align-items:center;padding-left:10px}
+.app{display:flex;height:330px}
+.app-menu{width:58px;background:var(--roxo);display:flex;flex-direction:column;align-items:center;gap:14px;padding:14px 0}
+.app-menu .mini{width:34px;color:var(--laranja)}
+.app-menu i{width:22px;height:22px;border-radius:6px;background:rgba(255,255,255,.18)}
+.app-menu i.on{background:rgba(255,255,255,.35);box-shadow:inset 3px 0 0 var(--laranja)}
+.app-main{flex:1;padding:14px 14px 0;display:flex;flex-direction:column;min-width:0}
+.app-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.app-head b{font-size:15px}
+.app-head span{font-size:11px;color:var(--cinza)}
+.tela .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px}
+.tela .kpi{background:#fff;border-radius:10px;padding:8px 10px;box-shadow:0 1px 0 rgba(0,0,0,.04)}
+.tela .kpi small{display:block;font-size:10px;color:var(--cinza)}
+.tela .kpi strong{font-size:16px;font-stretch:80%;font-variation-settings:"wdth" 80;font-weight:800}
+.kanban{flex:1;display:grid;grid-template-columns:repeat(4,1fr);gap:8px;min-height:0}
+.col{background:#ebe6f4;border-radius:10px;padding:8px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.col h4{font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#6b6280;display:flex;justify-content:space-between}
+.col h4 em{font-style:normal;background:#fff;border-radius:6px;padding:0 5px}
+.card{background:#fff;border-radius:8px;padding:7px 8px;font-size:10.5px;line-height:1.3;box-shadow:0 1px 2px rgba(20,6,52,.08);border-left:3px solid #d8cdee}
+.card b{display:block;font-size:11px}
+.card span{display:block;color:var(--cinza)}
+.card.vivo{border-left-color:var(--laranja);box-shadow:0 6px 18px rgba(255,122,0,.28);animation:entra .45s cubic-bezier(.2,1.4,.4,1)}
+.card.vivo .val{color:var(--roxo);font-weight:700}
+.card.ganho{border-left-color:#16a34a;background:#f0fdf4}
+@keyframes entra{from{opacity:0;transform:translateY(-10px) scale(.92)}to{opacity:1;transform:none}}
+.toast{position:absolute;right:14px;bottom:14px;display:flex;align-items:center;gap:10px;background:#fff;border-radius:12px;padding:10px 14px;box-shadow:0 14px 34px rgba(20,6,52,.25);font-size:12px;max-width:290px;opacity:0;transform:translateY(12px);transition:.35s}
+.toast.on{opacity:1;transform:none}
+.toast i{flex:none;width:30px;height:30px;border-radius:8px;display:grid;place-items:center;background:#efe6fb;color:var(--roxo);font-style:normal;font-size:15px}
+.toast b{display:block;font-size:12px}
+.toast span{color:var(--cinza);font-size:11px}
+.sim-pe{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:13px;color:rgba(255,255,255,.55)}
+.sim-pe button{color:#fff;font-weight:600;text-decoration:underline;text-underline-offset:3px}
+
+
+.simulador{background:var(--noite);color:#fff;border-top:1px solid rgba(255,255,255,.08)}
+.simulador h2{color:#fff}
+.simulador .intro{color:rgba(255,255,255,.72)}
+.sim-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+.sim-grid>*{min-width:0}
+.sim-txt .chips{margin:30px 0 30px}
+@media (max-width:1000px){.sim-grid{grid-template-columns:1fr;gap:34px}}
+@media (max-width:760px){.sim-txt .btn{width:100%}}
+.sim-top b{font-size:15px;letter-spacing:0;text-transform:none;color:rgba(255,255,255,.75);font-weight:600}
+.chip{padding:10px 16px}
+@media (max-width:760px){.chips{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-right:calc(var(--pad)*-1);padding-right:var(--pad)}.chip{flex:none}}
+
+/* caminho do lead */
+.caminho{background:var(--lilas)}
+.etapas{margin-top:50px;display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
+.etapas::before{content:"";position:absolute;left:10%;right:10%;top:27px;height:3px;background:var(--lilas2)}
+.trilho{position:absolute;left:10%;top:27px;height:3px;background:var(--laranja);width:0;transition:width .45s ease}
+.etapa{position:relative;display:flex;flex-direction:column;align-items:center;gap:12px;padding:0 6px;text-align:center;font-weight:700;color:var(--suave)}
+.etapa .bola{width:56px;height:56px;border-radius:50%;background:var(--branco);border:3px solid var(--lilas2);display:grid;place-items:center;font-size:19px;font-weight:800;color:var(--suave);transition:.25s}
+.etapa:hover .bola{border-color:var(--roxo)}
+.etapa[aria-selected=true]{color:var(--tinta)}
+.etapa[aria-selected=true] .bola{background:var(--laranja);border-color:var(--laranja);color:#1f0b00;transform:scale(1.08)}
+.etapa.feita .bola{background:var(--roxo);border-color:var(--roxo);color:#fff}
+.painel-etapa{margin-top:44px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;background:var(--bege);border-radius:22px;padding:40px;box-shadow:0 30px 60px -34px rgba(74,3,162,.4)}
+.painel-etapa[hidden]{display:none}
+.painel-etapa h3{font-size:clamp(28px,3vw,40px)}
+.painel-etapa p{margin-top:12px;font-size:17px;max-width:46ch}
+.painel-etapa ul{margin-top:18px;list-style:none;display:grid;gap:10px}
+.painel-etapa li{display:flex;gap:10px;align-items:flex-start}
+.painel-etapa li svg{flex:none;width:20px;height:20px;margin-top:3px;color:var(--roxo)}
+.proximo{margin-top:24px;font-weight:700;color:var(--roxo);text-decoration:underline;text-underline-offset:4px}
+
+/* mini interface (compartilhada) */
+.ui{background:var(--branco);border-radius:16px;padding:16px;font-size:14px;color:var(--tinta);border:1px solid var(--lilas2)}
+.ui-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-weight:700}
+.ui-top small{font-weight:500;color:var(--suave)}
+.linha-ui{display:flex;align-items:center;gap:12px;background:var(--cartao);border-radius:10px;padding:11px 12px;margin-top:8px}
+.linha-ui .av{flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:12px;color:#fff;background:var(--roxo)}
+.linha-ui .av.l{background:var(--laranja);color:#1f0b00}
+.linha-ui .av.v{background:var(--verde)}
+.linha-ui div{flex:1;min-width:0}
+.linha-ui b{display:block;font-size:14px}
+.linha-ui small{color:var(--suave);font-size:12.5px}
+.selo{flex:none;font-size:12px;font-weight:700;border-radius:999px;padding:4px 10px;background:var(--laranja-claro);color:#8a3d00}
+.selo.ok{background:#e6f7ed;color:#117a3c}
+.selo.r{background:var(--lilas2);color:var(--roxo)}
+
+/* gestor x corretor */
+.papeis{background:var(--noite);color:rgba(255,255,255,.78)}
+.papeis h2,.papeis .visao>div>h3{color:#fff}
+.papeis .visao li b{color:#fff}
+.abas{display:inline-flex;margin-top:34px;background:rgba(255,255,255,.08);border-radius:14px;padding:6px;gap:6px}
+.aba{padding:12px 22px;border-radius:10px;font-weight:700;color:rgba(255,255,255,.7)}
+.aba[aria-selected=true]{background:var(--laranja);color:#1f0b00}
+.visao{margin-top:30px;display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start}
+.visao[hidden]{display:none}
+.visao>*{min-width:0}
+.visao h3{font-size:clamp(26px,2.8vw,36px)}
+.visao p{margin-top:12px;font-size:17px}
+.visao ul{margin-top:20px;list-style:none;display:grid;gap:14px}
+.visao li{padding-left:18px;border-left:3px solid var(--laranja)}
+.papeis .visao p{color:rgba(255,255,255,.75)}
+.visao li b{display:block;color:var(--tinta)}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.kpi{background:var(--cartao);border-radius:12px;padding:12px}
+.kpi small{display:block;color:var(--suave);font-size:12px}
+.kpi strong{font-size:22px;font-stretch:80%;font-variation-settings:"wdth" 80;font-weight:800}
+.barras{display:grid;gap:10px;margin-top:12px;background:var(--cartao);border-radius:12px;padding:14px}
+.barra{display:grid;grid-template-columns:96px 1fr 70px;align-items:center;gap:10px;font-size:13px}
+.barra i{display:block;height:10px;border-radius:6px;background:var(--roxo)}
+.barra span:last-child{text-align:right;font-weight:700}
+
+/* recursos */
+.recursos{background:radial-gradient(ellipse 70% 80% at 0% 0%,rgba(93,20,196,.75),transparent 70%),radial-gradient(ellipse 50% 60% at 100% 100%,rgba(255,122,0,.18),transparent 70%),var(--noite);color:rgba(255,255,255,.8)}
+.recursos h2{color:#fff}
+.recursos .intro{color:rgba(255,255,255,.7)}
+.grupos{margin-top:56px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid rgba(255,255,255,.15)}
+.grupo{padding:28px 26px 10px 0}
+.grupo+.grupo{padding-left:26px;border-left:1px solid rgba(255,255,255,.15)}
+.grupo h3{color:var(--laranja);font-size:28px;margin-bottom:18px}
+.grupo dl{display:grid;gap:18px}
+.grupo dt{color:#fff;font-weight:700}
+.grupo dd{font-size:15px;color:rgba(255,255,255,.65)}
+.plano-nota{margin-top:30px;font-size:14px;color:rgba(255,255,255,.55)}
+
+/* monte seu plano */
+.monte{background:var(--lilas)}
+.monte-grid{margin-top:46px;display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:stretch}
+.monte-grid>*{min-width:0}
+.controles{background:var(--bege);border-radius:22px;padding:34px;display:grid;gap:30px;align-content:start}
+.controles label{display:block;font-weight:700;color:var(--tinta);font-size:18px}
+.valor{font-stretch:72%;font-variation-settings:"wdth" 72;font-weight:800;font-size:44px;color:var(--roxo);line-height:1.1}
+input[type=range]{width:100%;margin-top:10px;accent-color:var(--laranja);height:28px}
+.opcoes{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.opcoes button{padding:10px 16px;border-radius:10px;border:2px solid #dcc3a6;background:var(--cartao);font-weight:700;color:var(--texto)}
+.opcoes button[aria-pressed=true]{border-color:var(--roxo);background:var(--roxo);color:#fff}
+.recomenda{background:var(--roxo);color:#fff;border-radius:22px;padding:34px;display:flex;flex-direction:column;gap:16px}
+.recomenda small{color:rgba(255,255,255,.7);font-size:15px}
+.recomenda h3{color:#fff;font-size:clamp(44px,5vw,64px)}
+.recomenda .lim{font-size:18px;color:rgba(255,255,255,.85)}
+.recomenda ul{list-style:none;display:grid;gap:10px;margin:6px 0 10px}
+.recomenda li{display:flex;gap:10px}
+.recomenda li svg{flex:none;width:20px;height:20px;margin-top:3px;color:var(--laranja)}
+.recomenda .btn{margin-top:auto;align-self:flex-start}
+.recomenda .obs{font-size:14px;color:rgba(255,255,255,.65)}
+
+/* seguranca */
+.seguro{background:var(--noite);padding-top:90px;padding-bottom:90px;color:rgba(255,255,255,.75)}
+.seguro h2,.seguro .ponto b{color:#fff}
+.seguro .ponto svg{color:var(--laranja)}
+.seguro-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:50px;align-items:start}
+.seguro-grid h2{font-size:clamp(30px,4vw,48px)}
+.pontos{display:grid;grid-template-columns:1fr 1fr;gap:28px 36px}
+.ponto svg{width:30px;height:30px;color:var(--roxo);margin-bottom:10px}
+.ponto b{display:block;color:var(--tinta);font-size:18px;margin-bottom:4px}
+.ponto p{font-size:15.5px}
+
+/* faq */
+.faq{background:var(--lilas)}
+.faq-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:50px;align-items:start}
+.faq-grid .intro a{color:var(--roxo);font-weight:700}
+.perguntas{display:grid;gap:10px}
+.perguntas details{background:var(--bege);border-radius:14px;border:1px solid var(--lilas2)}
+.perguntas summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:16px;align-items:center;padding:20px 22px;font-weight:700;color:var(--tinta);font-size:17px}
+.perguntas summary::-webkit-details-marker{display:none}
+.perguntas summary::after{content:"";flex:none;width:12px;height:12px;border-right:3px solid var(--roxo);border-bottom:3px solid var(--roxo);transform:rotate(45deg) translateY(-3px);transition:transform .25s}
+.perguntas details[open] summary::after{transform:rotate(-135deg) translateY(-2px)}
+.perguntas details p{padding:0 22px 20px;font-size:16px;max-width:62ch}
+
+/* final */
+.final{background:var(--laranja);color:#1f0b00;padding-top:100px;padding-bottom:100px;overflow:hidden}
+.final .wrap{display:grid;grid-template-columns:1.3fr .7fr;gap:40px;align-items:center}
+.final h2{color:#1f0b00;font-size:clamp(40px,6vw,80px);max-width:13ch}
+.final p{font-size:19px;margin:20px 0 32px;max-width:46ch}
+.final .btn-roxo{min-height:60px;font-size:18px}
+.chave{width:100%;max-width:300px;justify-self:center;color:#1f0b00;opacity:.9}
+
+footer{background:var(--noite);border-top:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.6);padding:44px 0 100px;font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px}
+footer .redes{display:flex;gap:10px}
+footer .redes a{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(255,255,255,.2);color:#fff}
+footer .redes a:hover{background:var(--roxo)}
+footer .redes svg{width:20px;height:20px}
+
+.zap{position:fixed;right:22px;bottom:22px;z-index:60;width:60px;height:60px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;box-shadow:0 12px 28px rgba(0,0,0,.3)}
+.zap svg{width:32px;height:32px}
+.barra-m{display:none}
+
+@media (max-width:1000px){
+  .nav{display:none}
+  .topo .btn{margin-left:auto}
+  .hero .wrap{grid-template-columns:1fr}
+  .hero-txt{padding-bottom:10px}
+  .placa-cena{height:430px}
+  .grupos{grid-template-columns:1fr 1fr}
+  .grupo:nth-child(3){padding-left:0;border-left:0}
+  .grupo:nth-child(n+3){border-top:1px solid rgba(255,255,255,.15)}
+  .visao,.seguro-grid,.faq-grid,.monte-grid{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  :root{--pad:18px}
+  section{padding-top:72px;padding-bottom:72px}
+  .hero{padding-top:44px}
+  .hero p{font-size:18px}
+  .hero .acoes .btn{width:100%}
+  .placa-cena{height:380px}
+  .aviso-lead{right:auto;left:0;bottom:44px}
+  .etapas{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:74px;overflow-x:auto;scrollbar-width:none;padding-bottom:6px;margin-left:calc(var(--pad)*-1);margin-right:calc(var(--pad)*-1);padding-left:var(--pad);padding-right:var(--pad)}
+  .etapas::-webkit-scrollbar{display:none}
+  .etapas::before,.trilho{display:none}
+  .etapa{font-size:13px}
+  .etapa .bola{width:48px;height:48px}
+  .painel-etapa{grid-template-columns:1fr;padding:24px;gap:24px}
+  .abas{display:flex}
+  .aba{flex:1;padding:12px 10px}
+  .kpi strong{font-size:18px}
+  .grupos{grid-template-columns:1fr}
+  .grupo,.grupo+.grupo{padding:24px 0 10px;border-left:0}
+  .grupo+.grupo{border-top:1px solid rgba(255,255,255,.15)}
+  .controles,.recomenda{padding:24px}
+  .recomenda .btn{align-self:stretch}
+  .pontos{grid-template-columns:1fr}
+  .final .wrap{grid-template-columns:1fr}
+  .final .btn{width:100%}
+  .chave{display:none}
+  .zap{display:none}
+  .barra-m{display:block;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(20,6,52,.94);border-top:1px solid rgba(255,255,255,.12);transform:translateY(110%);transition:transform .3s}
+  .barra-m.on{transform:none}
+  .barra-m .btn{width:100%;min-height:52px}
+}
+@media (max-width:420px){
+  .topo .btn .longo{display:none}
+  .logo span{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .anima .vendido,.anima .aviso-lead{opacity:1}
+}
+</style>
+</head>
+<body>
+
+<header class="topo">
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="SAX CRM, voltar ao início"><svg viewBox="0 0 977 295" role="img" aria-label="SAX"><path fill="currentColor" fill-rule="evenodd" d="M3.6 291.4C2.3 290.1 2.3 289.4 3.6 285.8C6.0 279.0 12.5 267.5 18.5 259.6C30.1 244.1 46.8 233.4 67.0 228.4C73.7 226.8 80.6 226.5 130.5 226.0C185.5 225.5 186.6 225.5 190.5 223.3C208.7 213.5 208.8 187.4 190.6 177.7C186.6 175.5 185.5 175.5 132.5 174.9C74.2 174.2 72.6 174.1 58.4 168.4C54.6 166.9 51.3 165.4 51.0 165.1C50.7 164.7 49.2 163.9 47.6 163.2C40.2 159.9 23.4 144.9 19.6 138.2C19.1 137.3 17.9 135.8 17.1 134.8C13.4 130.9 6.4 114.9 4.6 106.4C2.3 95.5 1.9 88.7 3.0 78.8C7.1 43.0 34.1 12.4 69.3 4.0C77.2 2.1 81.5 2.0 182.8 2.0C279.0 2.0 288.1 2.1 288.7 3.6C289.7 6.3 276.8 30.7 270.1 38.7C259.4 51.3 244.8 60.6 228.4 65.2C220.7 67.4 218.6 67.4 156.5 68.0C111.4 68.3 91.7 68.8 89.9 69.7C74.8 76.5 72.0 97.7 85.1 107.1C91.8 111.8 94.1 112.0 146.6 112.0C197.7 112.0 203.1 112.4 215.5 116.5C228.0 120.7 241.3 129.1 250.8 138.7C277.1 165.6 284.0 203.1 269.1 238.0C264.4 248.9 259.2 256.7 250.6 265.8C239.4 277.6 226.5 285.2 210.2 289.8L200.5 292.5L102.8 292.7C18.1 292.9 4.8 292.7 3.6 291.4Z M643.5 292.1C640.8 291.7 639.6 291.0 639.8 290.1C640.1 288.7 644.2 283.2 656.0 268.5C659.1 264.6 671.5 249.1 683.5 234.0C713.4 196.5 730.6 175.3 735.4 170.1C742.0 163.1 752.8 156.6 761.8 154.1C769.1 152.1 772.0 152.0 806.8 152.0C829.8 152.0 845.9 152.4 849.2 153.1C859.2 155.2 868.8 160.6 877.0 168.9C887.3 179.2 975.1 288.7 974.6 290.5C974.0 292.5 966.6 292.9 936.5 292.6C908.8 292.3 904.9 292.1 899.5 290.3C889.5 287.0 881.6 282.0 875.2 275.0C870.6 270.0 851.0 244.1 851.0 243.1C851.0 242.5 850.6 242.0 850.1 242.0C849.4 242.0 834.2 223.0 818.9 203.0C810.4 191.9 807.6 188.9 806.5 189.7C805.3 190.6 766.6 240.5 752.0 260.0C746.9 266.9 741.3 274.0 739.6 275.9C734.8 281.1 725.3 287.1 717.6 289.8C710.7 292.2 709.7 292.3 679.0 292.5C661.7 292.7 645.7 292.5 643.5 292.1Z M401.1 290.4C366.9 284.6 333.3 259.9 318.5 229.5C316.4 225.1 314.2 220.6 313.7 219.6C311.4 214.8 307.0 200.3 307.0 197.2C307.0 195.4 306.5 193.0 306.0 192.0C304.6 189.3 304.6 104.7 306.0 102.1C306.5 101.0 307.0 98.6 307.0 96.8C307.0 88.2 316.6 65.4 326.3 51.0C336.6 35.7 356.3 19.0 372.0 12.1C375.0 10.8 379.0 9.1 380.8 8.3C382.5 7.5 387.7 5.9 392.3 4.7C400.3 2.5 401.7 2.5 465.0 2.5C529.4 2.5 529.5 2.5 538.0 4.8C551.1 8.4 559.3 12.1 570.9 19.8C599.6 38.9 619.3 72.1 623.1 108.0C624.4 121.2 624.2 289.0 622.8 290.7C621.4 292.4 616.1 292.3 608.0 290.6C586.0 285.9 569.5 271.5 561.4 250.0L558.6 242.5L558.0 181.5C557.3 114.9 557.4 117.0 551.1 103.4C545.1 90.7 534.5 79.7 522.5 74.0C510.8 68.4 507.2 68.0 464.4 68.0C428.7 68.0 424.6 68.2 417.6 70.0C406.2 72.9 398.6 77.3 389.8 86.1C383.6 92.4 381.3 95.5 377.7 103.1C371.3 116.5 370.8 120.3 371.2 150.5C371.5 175.8 371.6 176.7 374.2 183.8C380.3 200.6 390.6 212.4 405.5 219.5C410.4 221.9 416.9 224.3 419.8 224.9C423.2 225.6 443.9 226.0 477.9 226.0C521.4 226.0 530.9 226.2 531.3 227.3C532.8 231.4 527.7 247.1 521.5 257.5C511.7 273.7 494.7 285.9 476.3 290.0C468.6 291.7 463.8 291.9 438.5 291.9C418.7 291.8 406.8 291.3 401.1 290.4Z M764.6 143.3C751.9 140.7 738.4 130.9 726.4 115.5C724.3 112.8 720.2 107.8 717.5 104.5C714.7 101.2 709.8 94.9 706.5 90.5C703.2 86.1 700.3 82.3 699.9 82.0C699.4 81.5 677.0 53.3 673.2 48.2C672.3 47.0 670.8 45.2 669.9 44.2C665.9 39.8 653.0 22.9 653.0 22.0C653.0 21.5 652.7 21.0 652.2 21.0C651.0 21.0 639.0 5.3 639.0 3.6C639.0 2.2 642.7 2.0 673.8 2.0C711.5 2.0 713.4 2.2 724.9 7.8C732.5 11.4 739.7 18.4 749.6 31.8C784.5 78.7 806.6 108.0 807.2 108.0C807.9 108.0 818.2 94.5 859.5 39.5C874.8 19.2 881.5 12.3 890.1 8.0C900.8 2.6 905.2 2.0 941.1 2.0C967.6 2.0 973.9 2.3 974.3 3.3C974.9 4.8 967.0 15.4 937.1 53.3C926.3 67.0 914.6 81.8 911.0 86.4C875.9 130.8 874.6 132.3 864.0 137.9C852.2 144.2 851.3 144.3 809.1 144.4C782.2 144.5 768.8 144.1 764.6 143.3Z"/></svg><span>CRM</span></a>
+    <nav class="nav" aria-label="Seções do site">
+      <a href="#caminho">Como funciona</a>
+      <a href="#recursos">Recursos</a>
+      <a href="#plano">Planos</a>
+      <a href="#duvidas">Dúvidas</a>
+    </nav>
+    <a class="btn btn-laranja" href="https://wa.me/5541991998738?text=Oi%21%20Vi%20o%20site%20do%20SAX%20CRM%20e%20quero%20agendar%20uma%20demonstra%C3%A7%C3%A3o." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg><span>Agendar<span class="longo"> demonstração</span></span></a>
+  </div>
+</header>
+
+<main id="inicio">
+<section class="hero" id="hero">
+  <div class="wrap">
+    <div class="hero-txt">
+      <h1>Venda mais imóveis com a equipe que você já tem.</h1>
+      <p>O SAX organiza os leads dos portais, a agenda de visitas e as propostas da sua imobiliária. Cada corretor sabe o que fazer hoje, e você acompanha tudo de onde estiver.</p>
+      <div class="acoes">
+        <a class="btn btn-laranja" href="https://wa.me/5541991998738?text=Oi%21%20Vi%20o%20site%20do%20SAX%20CRM%20e%20quero%20agendar%20uma%20demonstra%C3%A7%C3%A3o." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg> Agendar demonstração</a>
+        <a class="link" href="#caminho">Ver como funciona</a>
+      </div>
+      <div class="fatos">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Abre no computador e no celular</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Nada para instalar</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Dados separados por imobiliária</span>
+      </div>
+    </div>
+    <div class="placa-cena anima" aria-hidden="true">
+      <div class="poste"></div>
+      <div class="placa">
+        <div class="vende">VENDE-SE</div>
+        <div class="linha"></div>
+        <div class="tel"><span>Apartamento 3 quartos<br>Fale com o corretor</span><svg viewBox="0 0 977 295" role="img" aria-label="SAX"><path fill="currentColor" fill-rule="evenodd" d="M3.6 291.4C2.3 290.1 2.3 289.4 3.6 285.8C6.0 279.0 12.5 267.5 18.5 259.6C30.1 244.1 46.8 233.4 67.0 228.4C73.7 226.8 80.6 226.5 130.5 226.0C185.5 225.5 186.6 225.5 190.5 223.3C208.7 213.5 208.8 187.4 190.6 177.7C186.6 175.5 185.5 175.5 132.5 174.9C74.2 174.2 72.6 174.1 58.4 168.4C54.6 166.9 51.3 165.4 51.0 165.1C50.7 164.7 49.2 163.9 47.6 163.2C40.2 159.9 23.4 144.9 19.6 138.2C19.1 137.3 17.9 135.8 17.1 134.8C13.4 130.9 6.4 114.9 4.6 106.4C2.3 95.5 1.9 88.7 3.0 78.8C7.1 43.0 34.1 12.4 69.3 4.0C77.2 2.1 81.5 2.0 182.8 2.0C279.0 2.0 288.1 2.1 288.7 3.6C289.7 6.3 276.8 30.7 270.1 38.7C259.4 51.3 244.8 60.6 228.4 65.2C220.7 67.4 218.6 67.4 156.5 68.0C111.4 68.3 91.7 68.8 89.9 69.7C74.8 76.5 72.0 97.7 85.1 107.1C91.8 111.8 94.1 112.0 146.6 112.0C197.7 112.0 203.1 112.4 215.5 116.5C228.0 120.7 241.3 129.1 250.8 138.7C277.1 165.6 284.0 203.1 269.1 238.0C264.4 248.9 259.2 256.7 250.6 265.8C239.4 277.6 226.5 285.2 210.2 289.8L200.5 292.5L102.8 292.7C18.1 292.9 4.8 292.7 3.6 291.4Z M643.5 292.1C640.8 291.7 639.6 291.0 639.8 290.1C640.1 288.7 644.2 283.2 656.0 268.5C659.1 264.6 671.5 249.1 683.5 234.0C713.4 196.5 730.6 175.3 735.4 170.1C742.0 163.1 752.8 156.6 761.8 154.1C769.1 152.1 772.0 152.0 806.8 152.0C829.8 152.0 845.9 152.4 849.2 153.1C859.2 155.2 868.8 160.6 877.0 168.9C887.3 179.2 975.1 288.7 974.6 290.5C974.0 292.5 966.6 292.9 936.5 292.6C908.8 292.3 904.9 292.1 899.5 290.3C889.5 287.0 881.6 282.0 875.2 275.0C870.6 270.0 851.0 244.1 851.0 243.1C851.0 242.5 850.6 242.0 850.1 242.0C849.4 242.0 834.2 223.0 818.9 203.0C810.4 191.9 807.6 188.9 806.5 189.7C805.3 190.6 766.6 240.5 752.0 260.0C746.9 266.9 741.3 274.0 739.6 275.9C734.8 281.1 725.3 287.1 717.6 289.8C710.7 292.2 709.7 292.3 679.0 292.5C661.7 292.7 645.7 292.5 643.5 292.1Z M401.1 290.4C366.9 284.6 333.3 259.9 318.5 229.5C316.4 225.1 314.2 220.6 313.7 219.6C311.4 214.8 307.0 200.3 307.0 197.2C307.0 195.4 306.5 193.0 306.0 192.0C304.6 189.3 304.6 104.7 306.0 102.1C306.5 101.0 307.0 98.6 307.0 96.8C307.0 88.2 316.6 65.4 326.3 51.0C336.6 35.7 356.3 19.0 372.0 12.1C375.0 10.8 379.0 9.1 380.8 8.3C382.5 7.5 387.7 5.9 392.3 4.7C400.3 2.5 401.7 2.5 465.0 2.5C529.4 2.5 529.5 2.5 538.0 4.8C551.1 8.4 559.3 12.1 570.9 19.8C599.6 38.9 619.3 72.1 623.1 108.0C624.4 121.2 624.2 289.0 622.8 290.7C621.4 292.4 616.1 292.3 608.0 290.6C586.0 285.9 569.5 271.5 561.4 250.0L558.6 242.5L558.0 181.5C557.3 114.9 557.4 117.0 551.1 103.4C545.1 90.7 534.5 79.7 522.5 74.0C510.8 68.4 507.2 68.0 464.4 68.0C428.7 68.0 424.6 68.2 417.6 70.0C406.2 72.9 398.6 77.3 389.8 86.1C383.6 92.4 381.3 95.5 377.7 103.1C371.3 116.5 370.8 120.3 371.2 150.5C371.5 175.8 371.6 176.7 374.2 183.8C380.3 200.6 390.6 212.4 405.5 219.5C410.4 221.9 416.9 224.3 419.8 224.9C423.2 225.6 443.9 226.0 477.9 226.0C521.4 226.0 530.9 226.2 531.3 227.3C532.8 231.4 527.7 247.1 521.5 257.5C511.7 273.7 494.7 285.9 476.3 290.0C468.6 291.7 463.8 291.9 438.5 291.9C418.7 291.8 406.8 291.3 401.1 290.4Z M764.6 143.3C751.9 140.7 738.4 130.9 726.4 115.5C724.3 112.8 720.2 107.8 717.5 104.5C714.7 101.2 709.8 94.9 706.5 90.5C703.2 86.1 700.3 82.3 699.9 82.0C699.4 81.5 677.0 53.3 673.2 48.2C672.3 47.0 670.8 45.2 669.9 44.2C665.9 39.8 653.0 22.9 653.0 22.0C653.0 21.5 652.7 21.0 652.2 21.0C651.0 21.0 639.0 5.3 639.0 3.6C639.0 2.2 642.7 2.0 673.8 2.0C711.5 2.0 713.4 2.2 724.9 7.8C732.5 11.4 739.7 18.4 749.6 31.8C784.5 78.7 806.6 108.0 807.2 108.0C807.9 108.0 818.2 94.5 859.5 39.5C874.8 19.2 881.5 12.3 890.1 8.0C900.8 2.6 905.2 2.0 941.1 2.0C967.6 2.0 973.9 2.3 974.3 3.3C974.9 4.8 967.0 15.4 937.1 53.3C926.3 67.0 914.6 81.8 911.0 86.4C875.9 130.8 874.6 132.3 864.0 137.9C852.2 144.2 851.3 144.3 809.1 144.4C782.2 144.5 768.8 144.1 764.6 143.3Z"/></svg></div>
+        <div class="vendido">VENDIDO</div>
+      </div>
+      <div class="aviso-lead"><i>✓</i><div><b>Contrato assinado</b><small>Negócio marcado como ganho</small></div></div>
+      <div class="grama"></div>
+    </div>
+  </div>
+</section>
+
+<section class="simulador" id="simulador">
+  <div class="wrap sim-grid">
+    <div class="sim-txt">
+      <h2>Veja o funil andando na tela.</h2>
+      <p class="intro">Escolha o tipo de operação e acompanhe um lead indo do primeiro contato até o contrato assinado.</p>
+      <div class="chips" role="group" aria-label="Tipo de operação">
+        <button class="chip" type="button" data-cena="venda" aria-pressed="true">Venda</button>
+        <button class="chip" type="button" data-cena="locacao" aria-pressed="false">Locação</button>
+        <button class="chip" type="button" data-cena="lancamento" aria-pressed="false">Lançamento</button>
+      </div>
+      <a class="btn btn-laranja" id="cta-sim" href="https://wa.me/5541991998738?text=Oi%21%20Vi%20o%20site%20do%20SAX%20CRM%20e%20quero%20agendar%20uma%20demonstra%C3%A7%C3%A3o." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg> Ver na minha imobiliária</a>
+    </div>
+    <div class="sim" aria-label="Simulação do CRM">
+      <div class="tela-wrap" id="telaWrap">
+        <div class="tela" id="tela">
+          <div class="barra-nav"><i></i><i></i><i></i><span>app.saxcrm.com.br/negocios</span></div>
+          <div class="app">
+            <div class="app-menu"><span class="mini"><svg viewBox="0 0 977 295" role="img" aria-label="SAX"><path fill="currentColor" fill-rule="evenodd" d="M3.6 291.4C2.3 290.1 2.3 289.4 3.6 285.8C6.0 279.0 12.5 267.5 18.5 259.6C30.1 244.1 46.8 233.4 67.0 228.4C73.7 226.8 80.6 226.5 130.5 226.0C185.5 225.5 186.6 225.5 190.5 223.3C208.7 213.5 208.8 187.4 190.6 177.7C186.6 175.5 185.5 175.5 132.5 174.9C74.2 174.2 72.6 174.1 58.4 168.4C54.6 166.9 51.3 165.4 51.0 165.1C50.7 164.7 49.2 163.9 47.6 163.2C40.2 159.9 23.4 144.9 19.6 138.2C19.1 137.3 17.9 135.8 17.1 134.8C13.4 130.9 6.4 114.9 4.6 106.4C2.3 95.5 1.9 88.7 3.0 78.8C7.1 43.0 34.1 12.4 69.3 4.0C77.2 2.1 81.5 2.0 182.8 2.0C279.0 2.0 288.1 2.1 288.7 3.6C289.7 6.3 276.8 30.7 270.1 38.7C259.4 51.3 244.8 60.6 228.4 65.2C220.7 67.4 218.6 67.4 156.5 68.0C111.4 68.3 91.7 68.8 89.9 69.7C74.8 76.5 72.0 97.7 85.1 107.1C91.8 111.8 94.1 112.0 146.6 112.0C197.7 112.0 203.1 112.4 215.5 116.5C228.0 120.7 241.3 129.1 250.8 138.7C277.1 165.6 284.0 203.1 269.1 238.0C264.4 248.9 259.2 256.7 250.6 265.8C239.4 277.6 226.5 285.2 210.2 289.8L200.5 292.5L102.8 292.7C18.1 292.9 4.8 292.7 3.6 291.4Z M643.5 292.1C640.8 291.7 639.6 291.0 639.8 290.1C640.1 288.7 644.2 283.2 656.0 268.5C659.1 264.6 671.5 249.1 683.5 234.0C713.4 196.5 730.6 175.3 735.4 170.1C742.0 163.1 752.8 156.6 761.8 154.1C769.1 152.1 772.0 152.0 806.8 152.0C829.8 152.0 845.9 152.4 849.2 153.1C859.2 155.2 868.8 160.6 877.0 168.9C887.3 179.2 975.1 288.7 974.6 290.5C974.0 292.5 966.6 292.9 936.5 292.6C908.8 292.3 904.9 292.1 899.5 290.3C889.5 287.0 881.6 282.0 875.2 275.0C870.6 270.0 851.0 244.1 851.0 243.1C851.0 242.5 850.6 242.0 850.1 242.0C849.4 242.0 834.2 223.0 818.9 203.0C810.4 191.9 807.6 188.9 806.5 189.7C805.3 190.6 766.6 240.5 752.0 260.0C746.9 266.9 741.3 274.0 739.6 275.9C734.8 281.1 725.3 287.1 717.6 289.8C710.7 292.2 709.7 292.3 679.0 292.5C661.7 292.7 645.7 292.5 643.5 292.1Z M401.1 290.4C366.9 284.6 333.3 259.9 318.5 229.5C316.4 225.1 314.2 220.6 313.7 219.6C311.4 214.8 307.0 200.3 307.0 197.2C307.0 195.4 306.5 193.0 306.0 192.0C304.6 189.3 304.6 104.7 306.0 102.1C306.5 101.0 307.0 98.6 307.0 96.8C307.0 88.2 316.6 65.4 326.3 51.0C336.6 35.7 356.3 19.0 372.0 12.1C375.0 10.8 379.0 9.1 380.8 8.3C382.5 7.5 387.7 5.9 392.3 4.7C400.3 2.5 401.7 2.5 465.0 2.5C529.4 2.5 529.5 2.5 538.0 4.8C551.1 8.4 559.3 12.1 570.9 19.8C599.6 38.9 619.3 72.1 623.1 108.0C624.4 121.2 624.2 289.0 622.8 290.7C621.4 292.4 616.1 292.3 608.0 290.6C586.0 285.9 569.5 271.5 561.4 250.0L558.6 242.5L558.0 181.5C557.3 114.9 557.4 117.0 551.1 103.4C545.1 90.7 534.5 79.7 522.5 74.0C510.8 68.4 507.2 68.0 464.4 68.0C428.7 68.0 424.6 68.2 417.6 70.0C406.2 72.9 398.6 77.3 389.8 86.1C383.6 92.4 381.3 95.5 377.7 103.1C371.3 116.5 370.8 120.3 371.2 150.5C371.5 175.8 371.6 176.7 374.2 183.8C380.3 200.6 390.6 212.4 405.5 219.5C410.4 221.9 416.9 224.3 419.8 224.9C423.2 225.6 443.9 226.0 477.9 226.0C521.4 226.0 530.9 226.2 531.3 227.3C532.8 231.4 527.7 247.1 521.5 257.5C511.7 273.7 494.7 285.9 476.3 290.0C468.6 291.7 463.8 291.9 438.5 291.9C418.7 291.8 406.8 291.3 401.1 290.4Z M764.6 143.3C751.9 140.7 738.4 130.9 726.4 115.5C724.3 112.8 720.2 107.8 717.5 104.5C714.7 101.2 709.8 94.9 706.5 90.5C703.2 86.1 700.3 82.3 699.9 82.0C699.4 81.5 677.0 53.3 673.2 48.2C672.3 47.0 670.8 45.2 669.9 44.2C665.9 39.8 653.0 22.9 653.0 22.0C653.0 21.5 652.7 21.0 652.2 21.0C651.0 21.0 639.0 5.3 639.0 3.6C639.0 2.2 642.7 2.0 673.8 2.0C711.5 2.0 713.4 2.2 724.9 7.8C732.5 11.4 739.7 18.4 749.6 31.8C784.5 78.7 806.6 108.0 807.2 108.0C807.9 108.0 818.2 94.5 859.5 39.5C874.8 19.2 881.5 12.3 890.1 8.0C900.8 2.6 905.2 2.0 941.1 2.0C967.6 2.0 973.9 2.3 974.3 3.3C974.9 4.8 967.0 15.4 937.1 53.3C926.3 67.0 914.6 81.8 911.0 86.4C875.9 130.8 874.6 132.3 864.0 137.9C852.2 144.2 851.3 144.3 809.1 144.4C782.2 144.5 768.8 144.1 764.6 143.3Z"/></svg></span><i></i><i class="on"></i><i></i><i></i><i></i></div>
+            <div class="app-main">
+              <div class="app-head"><b id="simTitulo">Funil de vendas</b><span id="simData">Hoje, 09:12</span></div>
+              <div class="kpis kpis-sim">
+                <div class="kpi"><small>Leads no mês</small><strong id="kLeads">48</strong></div>
+                <div class="kpi"><small>Visitas agendadas</small><strong id="kVisitas">12</strong></div>
+                <div class="kpi"><small id="kValorRot">Em negociação</small><strong id="kValor">R$ 4,2 mi</strong></div>
+              </div>
+              <div class="kanban" id="kanban"></div>
+            </div>
+          </div>
+          <div class="toast" id="toast" role="status" aria-live="polite"><i id="toastIco">!</i><div><b id="toastT"></b><span id="toastS"></span></div></div>
+        </div>
+      </div>
+      <div class="sim-pe"><span>Simulação com dados fictícios.</span><button type="button" id="deNovo">Ver de novo</button></div>
+    </div>
+  </div>
+</section>
+
+<section class="caminho" id="caminho">
+  <div class="wrap">
+    <h2>O caminho de cada lead, sem nada se perder.</h2>
+    <p class="intro">Toque em cada etapa e veja o que o SAX faz por você em cada uma delas.</p>
+    <div class="etapas" role="tablist" aria-label="Etapas do lead">
+      <span class="trilho" id="trilho"></span>
+      <button class="etapa" role="tab" id="et-0" aria-controls="pe-0" aria-selected="true" tabindex="0"><span class="bola">1</span>Lead chega</button><button class="etapa" role="tab" id="et-1" aria-controls="pe-1" aria-selected="false" tabindex="-1"><span class="bola">2</span>Contato</button><button class="etapa" role="tab" id="et-2" aria-controls="pe-2" aria-selected="false" tabindex="-1"><span class="bola">3</span>Visita</button><button class="etapa" role="tab" id="et-3" aria-controls="pe-3" aria-selected="false" tabindex="-1"><span class="bola">4</span>Proposta</button><button class="etapa" role="tab" id="et-4" aria-controls="pe-4" aria-selected="false" tabindex="-1"><span class="bola">5</span>Contrato</button>
+    </div>
+    <div class="painel-etapa" role="tabpanel" id="pe-0" aria-labelledby="et-0"><div><h3>O lead chega e já tem dono.</h3><p>Do portal, do site ou do plantão, o contato cai na caixa de entrada com o imóvel de interesse. Você distribui para um corretor com um toque.</p><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Todos os canais num lugar só</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Prazo de primeiro contato correndo</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Aviso quando o prazo estoura</li></ul><button type="button" class="proximo" data-ir="1">Próxima etapa: Contato</button></div><div class="ui"><div class="ui-top">Caixa de entrada<small>Exemplo</small></div><div class="linha-ui"><span class="av l">MA</span><div><b>Mariana Alves</b><small>Portal: Apartamento 3 quartos</small></div><span class="selo ">Novo</span></div><div class="linha-ui"><span class="av ">RS</span><div><b>Rafael Souza</b><small>Site: Casa com quintal</small></div><span class="selo r">12 min</span></div><div class="linha-ui"><span class="av v">DT</span><div><b>Diego Torres</b><small>Plantão: Sala comercial</small></div><span class="selo ok">Atendido</span></div></div></div><div class="painel-etapa" role="tabpanel" id="pe-1" aria-labelledby="et-1" hidden><div><h3>Ninguém fica sem resposta.</h3><p>O corretor recebe a tarefa de primeiro contato com horário. Se ele não agir, o gestor fica sabendo antes do cliente desistir.</p><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Tarefa criada automaticamente</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Histórico de cada ligação e mensagem</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Lembrete na agenda do corretor</li></ul><button type="button" class="proximo" data-ir="2">Próxima etapa: Visita</button></div><div class="ui"><div class="ui-top">Atividades<small>Exemplo</small></div><div class="linha-ui"><span class="av l">MA</span><div><b>Ligar para Mariana Alves</b><small>Primeiro contato do lead do portal</small></div><span class="selo ">09:30</span></div><div class="linha-ui"><span class="av ">MA</span><div><b>Ligação feita</b><small>Quer visitar no sábado de manhã</small></div><span class="selo ok">Feito</span></div></div></div><div class="painel-etapa" role="tabpanel" id="pe-2" aria-labelledby="et-2" hidden><div><h3>A visita entra na agenda e no Google Agenda.</h3><p>A visita fica marcada com o imóvel, o cliente e o corretor. O sistema ainda sugere outros imóveis da carteira que combinam com o que o cliente procura.</p><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Agenda da equipe inteira</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Lembrete antes da visita</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Vitrine de imóveis parecidos por link</li></ul><button type="button" class="proximo" data-ir="3">Próxima etapa: Proposta</button></div><div class="ui"><div class="ui-top">Agenda<small>Exemplo</small></div><div class="linha-ui"><span class="av ">SA</span><div><b>Visita confirmada</b><small>Sábado, 10:00 com a corretora Paula</small></div><span class="selo r">Agenda</span></div><div class="linha-ui"><span class="av v">3</span><div><b>3 imóveis combinam com Mariana</b><small>Vitrine pronta para enviar</small></div><span class="selo ok">Link</span></div></div></div><div class="painel-etapa" role="tabpanel" id="pe-3" aria-labelledby="et-3" hidden><div><h3>A proposta fica registrada no negócio.</h3><p>Valor, condições e contraproposta ficam no histórico. O proprietário acompanha o interesse no imóvel dele por um link, sem precisar ligar.</p><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Proposta ligada ao negócio e ao imóvel</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Relatório para o proprietário</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Alerta de negócio parado</li></ul><button type="button" class="proximo" data-ir="4">Próxima etapa: Contrato</button></div><div class="ui"><div class="ui-top">Negócio<small>Exemplo</small></div><div class="linha-ui"><span class="av l">R$</span><div><b>Proposta de R$ 870 mil</b><small>Entrada de 30%, saldo financiado</small></div><span class="selo ">Enviada</span></div><div class="linha-ui"><span class="av ">PR</span><div><b>Proprietário abriu o relatório</b><small>Viu 6 visitas e 1 proposta</small></div><span class="selo r">Hoje</span></div></div></div><div class="painel-etapa" role="tabpanel" id="pe-4" aria-labelledby="et-4" hidden><div><h3>Contrato assinado pelo celular.</h3><p>O contrato sai do modelo da imobiliária e vai por link para as partes assinarem. Quando todos assinam, o negócio vira ganho e entra no ranking.</p><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Assinatura eletrônica por link</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Registro de quem assinou e quando</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Negócio ganho e comissão no financeiro</li></ul><a class="proximo" href="https://wa.me/5541991998738?text=Oi%21%20Vi%20o%20caminho%20do%20lead%20no%20site%20do%20SAX%20CRM%20e%20quero%20ver%20isso%20funcionando%20na%20minha%20imobili%C3%A1ria." target="_blank" rel="noopener">Ver isso funcionando na minha imobiliária</a></div><div class="ui"><div class="ui-top">Contrato<small>Exemplo</small></div><div class="linha-ui"><span class="av v">✓</span><div><b>Contrato assinado por todas as partes</b><small>Apartamento 3 quartos, Mariana Alves</small></div><span class="selo ok">Ganho</span></div><div class="linha-ui"><span class="av ">PL</span><div><b>Comissão lançada</b><small>Corretora Paula, a receber</small></div><span class="selo r">Financeiro</span></div></div></div>
+  </div>
+</section>
+
+<section class="papeis" id="papeis">
+  <div class="wrap">
+    <h2>Uma tela para quem vende. Outra para quem gerencia.</h2>
+    <div class="abas" role="tablist" aria-label="Escolha a visão">
+      <button class="aba" role="tab" id="aba-corretor" aria-controls="v-corretor" aria-selected="true">Para o corretor</button>
+      <button class="aba" role="tab" id="aba-gestor" aria-controls="v-gestor" aria-selected="false" tabindex="-1">Para o gestor</button>
+    </div>
+
+    <div class="visao" id="v-corretor" role="tabpanel" aria-labelledby="aba-corretor">
+      <div>
+        <h3>Abre o sistema e já sabe por onde começar.</h3>
+        <p>A tela inicial do corretor mostra o dia dele, em ordem de prioridade.</p>
+        <ul>
+          <li><b>Tarefas de hoje e atrasadas</b>Ligações, visitas e retornos com horário.</li>
+          <li><b>Leads esperando contato</b>Com o prazo de primeiro atendimento correndo.</li>
+          <li><b>Imóveis que combinam com o cliente</b>Para mandar uma vitrine por link na hora.</li>
+        </ul>
+      </div>
+      <div class="ui" aria-label="Exemplo da tela do corretor">
+        <div class="ui-top">Bom dia, Paula <small>3 tarefas para hoje</small></div>
+        <div class="linha-ui"><span class="av l">MA</span><div><b>Ligar para Mariana Alves</b><small>Apartamento 3 quartos, R$ 890 mil</small></div><span class="selo">09:30</span></div>
+        <div class="linha-ui"><span class="av">LF</span><div><b>Visita com Lucas Ferreira</b><small>Casa com quintal, Rua das Flores</small></div><span class="selo r">11:00</span></div>
+        <div class="linha-ui"><span class="av v">JP</span><div><b>Enviar proposta revisada</b><small>Cobertura, cliente Júlia Prado</small></div><span class="selo">15:00</span></div>
+        <div class="linha-ui"><span class="av l">!</span><div><b>2 leads novos esperando você</b><small>Responder em até 30 minutos</small></div><span class="selo">Agora</span></div>
+      </div>
+    </div>
+
+    <div class="visao" id="v-gestor" role="tabpanel" aria-labelledby="aba-gestor" hidden>
+      <div>
+        <h3>A operação inteira, sem precisar perguntar para ninguém.</h3>
+        <p>O gestor enxerga o funil, a equipe e os leads de cada origem num painel só.</p>
+        <ul>
+          <li><b>Ranking dos corretores</b>Quem ganhou mais negócios e quanto no mês.</li>
+          <li><b>Negócios parados</b>Alerta quando um negócio fica tempo demais na mesma etapa.</li>
+          <li><b>Origem dos leads</b>Quais portais e canais trazem venda de verdade.</li>
+        </ul>
+      </div>
+      <div class="ui" aria-label="Exemplo do painel do gestor">
+        <div class="ui-top">Visão geral <small>Este mês</small></div>
+        <div class="kpis">
+          <div class="kpi"><small>Leads</small><strong>148</strong></div>
+          <div class="kpi"><small>Visitas</small><strong>37</strong></div>
+          <div class="kpi"><small>Em negociação</small><strong>R$ 7,1 mi</strong></div>
+        </div>
+        <div class="barras">
+          <div class="barra"><span>Carlos M.</span><i style="width:100%"></i><span>R$ 970 mil</span></div>
+          <div class="barra"><span>Patrícia L.</span><i style="width:80%"></i><span>R$ 780 mil</span></div>
+          <div class="barra"><span>Rafael T.</span><i style="width:42%"></i><span>R$ 410 mil</span></div>
+        </div>
+        <div class="linha-ui"><span class="av l">!</span><div><b>4 negócios parados há mais de 7 dias</b><small>Toque para ver e redistribuir</small></div><span class="selo">Atenção</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="recursos" id="recursos">
+  <div class="wrap">
+    <h2>Tudo o que a imobiliária usa no dia a dia.</h2>
+    <p class="intro">Sem planilha paralela e sem grupo de WhatsApp para saber quem está com qual cliente.</p>
+    <div class="grupos"><div class="grupo"><h3>Captar</h3><dl><div><dt>Caixa de entrada de leads</dt><dd>Portal, site e plantão no mesmo lugar.</dd></div><div><dt>Distribuição para a equipe</dt><dd>Cada lead com um responsável.</dd></div><div><dt>Feed para portais</dt><dd>Imóveis no padrão VRSync dos portais.</dd></div></dl></div><div class="grupo"><h3>Atender</h3><dl><div><dt>Funil de negócios</dt><dd>Vários funis, etapas do seu jeito.</dd></div><div><dt>Agenda e Google Agenda</dt><dd>Visitas e tarefas com lembrete.</dd></div><div><dt>Vitrine para o cliente</dt><dd>Imóveis que combinam, enviados por link.</dd></div></dl></div><div class="grupo"><h3>Fechar</h3><dl><div><dt>Propostas</dt><dd>Valores e condições no histórico.</dd></div><div><dt>Contrato por link</dt><dd>Assinatura eletrônica no celular.</dd></div><div><dt>Relatório do proprietário</dt><dd>O dono acompanha sem ligar.</dd></div></dl></div><div class="grupo"><h3>Gerir</h3><dl><div><dt>Indicadores e ranking</dt><dd>Funil, origem e desempenho por corretor.</dd></div><div><dt>Automações</dt><dd>Próxima tarefa criada sozinha.</dd></div><div><dt>Chat da equipe e financeiro</dt><dd>Conversa interna, contas e comissões.</dd></div></dl></div></div>
+    <p class="plano-nota">Alguns recursos dependem do plano. O simulador abaixo mostra o que entra em cada um.</p>
+  </div>
+</section>
+
+<section class="monte" id="plano">
+  <div class="wrap">
+    <h2>Descubra o plano certo para a sua imobiliária.</h2>
+    <p class="intro">Responda três perguntas. O valor a gente passa pelo WhatsApp, junto com a demonstração.</p>
+    <div class="monte-grid">
+      <div class="controles">
+        <div>
+          <label for="corretores">Quantas pessoas vão usar o sistema?</label>
+          <div class="valor" id="corretoresValor" aria-live="polite">3 pessoas</div>
+          <input type="range" id="corretores" min="1" max="30" value="3" aria-describedby="corretoresValor">
+        </div>
+        <div>
+          <span id="imoveisRot" style="display:block;font-weight:700;color:var(--tinta);font-size:18px">Quantos imóveis na carteira?</span>
+          <div class="opcoes" role="group" aria-labelledby="imoveisRot" id="imoveis">
+            <button type="button" data-v="300" aria-pressed="true">Até 300</button>
+            <button type="button" data-v="1000" aria-pressed="false">Até 1.000</button>
+            <button type="button" data-v="3000" aria-pressed="false">Até 3.000</button>
+            <button type="button" data-v="99999" aria-pressed="false">Mais de 3.000</button>
+          </div>
+        </div>
+        <div>
+          <span id="extraRot" style="display:block;font-weight:700;color:var(--tinta);font-size:18px">Precisa de contrato e financeiro no sistema?</span>
+          <div class="opcoes" role="group" aria-labelledby="extraRot" id="extra">
+            <button type="button" data-v="nao" aria-pressed="true">Ainda não</button>
+            <button type="button" data-v="sim" aria-pressed="false">Sim</button>
+          </div>
+        </div>
+      </div>
+      <div class="recomenda" aria-live="polite">
+        <small>O plano indicado para você</small>
+        <h3 id="pNome">Profissional</h3>
+        <div class="lim" id="pLim">Até 5 usuários e 1.000 imóveis</div>
+        <ul id="pItens"></ul>
+        <a class="btn btn-laranja" id="pCta" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg> <span id="pCtaTxt">Quero o plano Profissional</span></a>
+        <p class="obs">A mensagem já vai com as suas respostas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seguro" id="seguranca">
+  <div class="wrap seguro-grid">
+    <h2>Os dados da sua imobiliária ficam com a sua imobiliária.</h2>
+    <div class="pontos">
+      <div class="ponto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5"/><path d="M3 12c0 1.7 4 3 9 3s9-1.3 9-3"/></svg><b>Banco próprio</b><p>Cada imobiliária tem um banco de dados separado das outras.</p></div>
+      <div class="ponto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg><b>Acesso por papel</b><p>O corretor vê a carteira dele. O gestor vê a operação inteira.</p></div>
+      <div class="ponto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5M12 7v5l3 2"/></svg><b>Histórico de cada negócio</b><p>Ligação, visita, proposta e mudança de etapa ficam registradas com data e autor.</p></div>
+      <div class="ponto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><b>Backup protegido</b><p>A cópia de segurança sai cifrada e só abre com a chave da sua empresa.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="duvidas">
+  <div class="wrap faq-grid">
+    <div>
+      <h2>Perguntas que todo dono de imobiliária faz.</h2>
+      <p class="intro">Não achou a sua? <a href="https://wa.me/5541991998738?text=Oi%21%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20SAX%20CRM." target="_blank" rel="noopener">Pergunte no WhatsApp</a>.</p>
+    </div>
+    <div class="perguntas"><details><summary>Preciso instalar alguma coisa?</summary><p>Não. O SAX abre no navegador do computador e do celular. Cada pessoa entra com o próprio e-mail e senha.</p></details><details><summary>Minha equipe vai conseguir usar?</summary><p>A tela do corretor mostra só o que ele precisa fazer hoje. Na demonstração a gente mostra o sistema com a rotina da sua imobiliária.</p></details><details><summary>Os meus imóveis vão para os portais?</summary><p>A partir do plano Business, o SAX gera o feed dos seus imóveis no padrão VRSync, usado pelos principais portais. A publicação depende do seu contrato com cada portal.</p></details><details><summary>A assinatura do contrato tem validade?</summary><p>É uma assinatura eletrônica feita por link, com registro de quem assinou e quando. Serve para a maior parte dos contratos de intermediação e locação. Escritura e financiamento seguem as regras do cartório e do banco.</p></details><details><summary>Funciona com o Google Agenda?</summary><p>Sim, a partir do plano Business. O corretor conecta a conta Google e as visitas aparecem na agenda dele.</p></details><details><summary>Quanto custa?</summary><p>Depende do número de usuários e dos recursos. Use o simulador de planos nesta página e mande pelo WhatsApp: respondemos com o valor.</p></details></div>
+  </div>
+</section>
+
+<section class="final" id="final">
+  <div class="wrap">
+    <div>
+      <h2>A próxima placa de vendido começa aqui.</h2>
+      <p>Chame no WhatsApp e agende uma demonstração com a rotina da sua imobiliária.</p>
+      <a class="btn btn-roxo" href="https://wa.me/5541991998738?text=Oi%21%20Vi%20o%20site%20do%20SAX%20CRM%20e%20quero%20agendar%20uma%20demonstra%C3%A7%C3%A3o." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg> Agendar demonstração</a>
+    </div>
+    <svg class="chave" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="64" cy="64" r="38"/><circle cx="64" cy="64" r="12"/><path d="M92 92l84 84M146 146l-18 18M164 164l-14 14"/></svg>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="SAX CRM"><svg viewBox="0 0 977 295" role="img" aria-label="SAX"><path fill="currentColor" fill-rule="evenodd" d="M3.6 291.4C2.3 290.1 2.3 289.4 3.6 285.8C6.0 279.0 12.5 267.5 18.5 259.6C30.1 244.1 46.8 233.4 67.0 228.4C73.7 226.8 80.6 226.5 130.5 226.0C185.5 225.5 186.6 225.5 190.5 223.3C208.7 213.5 208.8 187.4 190.6 177.7C186.6 175.5 185.5 175.5 132.5 174.9C74.2 174.2 72.6 174.1 58.4 168.4C54.6 166.9 51.3 165.4 51.0 165.1C50.7 164.7 49.2 163.9 47.6 163.2C40.2 159.9 23.4 144.9 19.6 138.2C19.1 137.3 17.9 135.8 17.1 134.8C13.4 130.9 6.4 114.9 4.6 106.4C2.3 95.5 1.9 88.7 3.0 78.8C7.1 43.0 34.1 12.4 69.3 4.0C77.2 2.1 81.5 2.0 182.8 2.0C279.0 2.0 288.1 2.1 288.7 3.6C289.7 6.3 276.8 30.7 270.1 38.7C259.4 51.3 244.8 60.6 228.4 65.2C220.7 67.4 218.6 67.4 156.5 68.0C111.4 68.3 91.7 68.8 89.9 69.7C74.8 76.5 72.0 97.7 85.1 107.1C91.8 111.8 94.1 112.0 146.6 112.0C197.7 112.0 203.1 112.4 215.5 116.5C228.0 120.7 241.3 129.1 250.8 138.7C277.1 165.6 284.0 203.1 269.1 238.0C264.4 248.9 259.2 256.7 250.6 265.8C239.4 277.6 226.5 285.2 210.2 289.8L200.5 292.5L102.8 292.7C18.1 292.9 4.8 292.7 3.6 291.4Z M643.5 292.1C640.8 291.7 639.6 291.0 639.8 290.1C640.1 288.7 644.2 283.2 656.0 268.5C659.1 264.6 671.5 249.1 683.5 234.0C713.4 196.5 730.6 175.3 735.4 170.1C742.0 163.1 752.8 156.6 761.8 154.1C769.1 152.1 772.0 152.0 806.8 152.0C829.8 152.0 845.9 152.4 849.2 153.1C859.2 155.2 868.8 160.6 877.0 168.9C887.3 179.2 975.1 288.7 974.6 290.5C974.0 292.5 966.6 292.9 936.5 292.6C908.8 292.3 904.9 292.1 899.5 290.3C889.5 287.0 881.6 282.0 875.2 275.0C870.6 270.0 851.0 244.1 851.0 243.1C851.0 242.5 850.6 242.0 850.1 242.0C849.4 242.0 834.2 223.0 818.9 203.0C810.4 191.9 807.6 188.9 806.5 189.7C805.3 190.6 766.6 240.5 752.0 260.0C746.9 266.9 741.3 274.0 739.6 275.9C734.8 281.1 725.3 287.1 717.6 289.8C710.7 292.2 709.7 292.3 679.0 292.5C661.7 292.7 645.7 292.5 643.5 292.1Z M401.1 290.4C366.9 284.6 333.3 259.9 318.5 229.5C316.4 225.1 314.2 220.6 313.7 219.6C311.4 214.8 307.0 200.3 307.0 197.2C307.0 195.4 306.5 193.0 306.0 192.0C304.6 189.3 304.6 104.7 306.0 102.1C306.5 101.0 307.0 98.6 307.0 96.8C307.0 88.2 316.6 65.4 326.3 51.0C336.6 35.7 356.3 19.0 372.0 12.1C375.0 10.8 379.0 9.1 380.8 8.3C382.5 7.5 387.7 5.9 392.3 4.7C400.3 2.5 401.7 2.5 465.0 2.5C529.4 2.5 529.5 2.5 538.0 4.8C551.1 8.4 559.3 12.1 570.9 19.8C599.6 38.9 619.3 72.1 623.1 108.0C624.4 121.2 624.2 289.0 622.8 290.7C621.4 292.4 616.1 292.3 608.0 290.6C586.0 285.9 569.5 271.5 561.4 250.0L558.6 242.5L558.0 181.5C557.3 114.9 557.4 117.0 551.1 103.4C545.1 90.7 534.5 79.7 522.5 74.0C510.8 68.4 507.2 68.0 464.4 68.0C428.7 68.0 424.6 68.2 417.6 70.0C406.2 72.9 398.6 77.3 389.8 86.1C383.6 92.4 381.3 95.5 377.7 103.1C371.3 116.5 370.8 120.3 371.2 150.5C371.5 175.8 371.6 176.7 374.2 183.8C380.3 200.6 390.6 212.4 405.5 219.5C410.4 221.9 416.9 224.3 419.8 224.9C423.2 225.6 443.9 226.0 477.9 226.0C521.4 226.0 530.9 226.2 531.3 227.3C532.8 231.4 527.7 247.1 521.5 257.5C511.7 273.7 494.7 285.9 476.3 290.0C468.6 291.7 463.8 291.9 438.5 291.9C418.7 291.8 406.8 291.3 401.1 290.4Z M764.6 143.3C751.9 140.7 738.4 130.9 726.4 115.5C724.3 112.8 720.2 107.8 717.5 104.5C714.7 101.2 709.8 94.9 706.5 90.5C703.2 86.1 700.3 82.3 699.9 82.0C699.4 81.5 677.0 53.3 673.2 48.2C672.3 47.0 670.8 45.2 669.9 44.2C665.9 39.8 653.0 22.9 653.0 22.0C653.0 21.5 652.7 21.0 652.2 21.0C651.0 21.0 639.0 5.3 639.0 3.6C639.0 2.2 642.7 2.0 673.8 2.0C711.5 2.0 713.4 2.2 724.9 7.8C732.5 11.4 739.7 18.4 749.6 31.8C784.5 78.7 806.6 108.0 807.2 108.0C807.9 108.0 818.2 94.5 859.5 39.5C874.8 19.2 881.5 12.3 890.1 8.0C900.8 2.6 905.2 2.0 941.1 2.0C967.6 2.0 973.9 2.3 974.3 3.3C974.9 4.8 967.0 15.4 937.1 53.3C926.3 67.0 914.6 81.8 911.0 86.4C875.9 130.8 874.6 132.3 864.0 137.9C852.2 144.2 851.3 144.3 809.1 144.4C782.2 144.5 768.8 144.1 764.6 143.3Z"/></svg><span style="color:#fff">CRM</span></a>
+    <p>CRM para imobiliárias e corretores.</p>
+    <div class="redes">
+      <a href="https://www.instagram.com/agenciasax/" target="_blank" rel="noopener" aria-label="Instagram da SAX"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+      <a href="https://www.facebook.com/profile.php?id=61593962325500" target="_blank" rel="noopener" aria-label="Facebook da SAX"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v7h4v-7h3l.5-4h-3.5V9c0-.6.4-1 1-1z"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<a class="zap" href="https://wa.me/5541991998738?text=Oi%21%20Vi%20o%20site%20do%20SAX%20CRM%20e%20quero%20entender%20como%20funciona." target="_blank" rel="noopener" aria-label="Chamar no WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg></a>
+<div class="barra-m" id="barraM"><a class="btn btn-laranja" href="https://wa.me/5541991998738?text=Oi%21%20Vi%20o%20site%20do%20SAX%20CRM%20e%20quero%20agendar%20uma%20demonstra%C3%A7%C3%A3o." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg> Agendar demonstração</a></div>
+
+<script>
+(function(){
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a[href*="wa.me"]'); if(!a) return;
+    try{ if(window.gtag) gtag('event','contato_whatsapp'); }catch(err){}
+    try{ if(window.fbq) fbq('track','Contact'); }catch(err){}
+    try{ (window.dataLayer=window.dataLayer||[]).push({event:'contato_whatsapp'}); }catch(err){}
+  });
+
+  var reduz = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* escala da tela do simulador */
+  var wrap=document.getElementById('telaWrap'), tela=document.getElementById('tela');
+  function escala(){ var s=Math.min(1.12, wrap.clientWidth/620); tela.style.transform='scale('+s+')'; wrap.style.height=(tela.offsetHeight*s)+'px'; }
+  window.addEventListener('resize',escala); escala();
+
+  /* simulador */
+  var CENAS={"venda": {"titulo": "Funil de vendas", "kpis": ["48", "12", "Em negociação", "R$ 4,2 mi"], "vivo": ["Mariana Alves", "Apto 3 quartos · Centro", "R$ 890 mil"], "fixos": [[["Rafael Souza", "Casa 4 quartos", ""]], [["Júlia Prado", "Cobertura", "R$ 1,4 mi"]], [["Pedro Lima", "Sala comercial", "R$ 420 mil"]], [["Ana Torres", "Apto 2 quartos", "R$ 610 mil"]]], "passos": [["!", "Lead novo do portal", "Responder em até 30 min"], ["📅", "Visita confirmada", "Amanhã, 10:00 com a corretora Paula"], ["📄", "Proposta enviada", "R$ 870 mil com entrada de 30%"], ["✓", "Contrato assinado por link", "Negócio marcado como ganho"]]}, "locacao": {"titulo": "Funil de locação", "kpis": ["63", "21", "Aluguel em negociação", "R$ 38 mil/mês"], "vivo": ["Lucas Ferreira", "Apto 2 quartos · mobiliado", "R$ 2.900/mês"], "fixos": [[["Carla Dias", "Kitnet perto da faculdade", ""]], [["Bruno Melo", "Casa com quintal", "R$ 3.400/mês"]], [["Sofia Rocha", "Loja de rua", "R$ 5.200/mês"]], [["Diego Alves", "Studio", "R$ 1.800/mês"]]], "passos": [["!", "Lead novo do site", "Quer visitar ainda esta semana"], ["📅", "Visita confirmada", "Hoje, 18:30"], ["📄", "Ficha e proposta recebidas", "Garantia: seguro fiança"], ["✓", "Contrato de locação assinado", "Chaves entregues na sexta"]]}, "lancamento": {"titulo": "Funil do lançamento", "kpis": ["212", "37", "Unidades reservadas", "18 de 64"], "vivo": ["Renata Campos", "Unidade 804 · 2 suítes", "R$ 735 mil"], "fixos": [[["Thiago Nunes", "Plantão de sábado", ""]], [["Elisa Moura", "Visita ao decorado", ""]], [["Marcos Reis", "Unidade 1102", "R$ 798 mil"]], [["Paula Lins", "Unidade 302", "R$ 689 mil"]]], "passos": [["!", "Lead do plantão", "Distribuído para o corretor da vez"], ["📅", "Visita ao decorado", "Sábado, 11:00"], ["📄", "Reserva da unidade 804", "Proposta com fluxo de pagamento"], ["✓", "Contrato assinado", "Unidade marcada como vendida"]]}};
+  var WA_CENA={"venda": "https://wa.me/5541991998738?text=Oi%21%20Vi%20o%20site%20do%20SAX%20CRM.%20Trabalho%20com%20venda%20de%20im%C3%B3veis%20e%20quero%20ver%20uma%20demonstra%C3%A7%C3%A3o.", "locacao": "https://wa.me/5541991998738?text=Oi%21%20Vi%20o%20site%20do%20SAX%20CRM.%20Trabalho%20com%20loca%C3%A7%C3%A3o%20e%20quero%20ver%20uma%20demonstra%C3%A7%C3%A3o.", "lancamento": "https://wa.me/5541991998738?text=Oi%21%20Vi%20o%20site%20do%20SAX%20CRM.%20Trabalho%20com%20lan%C3%A7amentos%20e%20quero%20ver%20uma%20demonstra%C3%A7%C3%A3o."};
+  var colunas=['Lead novo','Visita','Proposta','Fechado'];
+  var kanban=document.getElementById('kanban'), toast=document.getElementById('toast');
+  var timers=[], atual='venda';
+  function el(t,c,h){var e=document.createElement(t); if(c)e.className=c; if(h!=null)e.innerHTML=h; return e;}
+  function cardHTML(c){return '<b>'+c[0]+'</b><span>'+c[1]+'</span>'+(c[2]?'<div class="val">'+c[2]+'</div>':'');}
+  function montar(cena, etapa){
+    var C=CENAS[cena];
+    document.getElementById('simTitulo').textContent=C.titulo;
+    document.getElementById('kLeads').textContent=C.kpis[0];
+    document.getElementById('kVisitas').textContent=C.kpis[1];
+    document.getElementById('kValorRot').textContent=C.kpis[2];
+    document.getElementById('kValor').textContent=C.kpis[3];
+    kanban.innerHTML='';
+    colunas.forEach(function(nome,i){
+      var col=el('div','col'); var fixos=C.fixos[i];
+      var qtd=fixos.length+(etapa===i?1:0);
+      col.appendChild(el('h4',null,nome+'<em>'+qtd+'</em>'));
+      if(etapa===i){ var v=el('div','card vivo'+(i===3?' ganho':''),cardHTML(C.vivo)); col.appendChild(v); }
+      fixos.forEach(function(f){ col.appendChild(el('div','card',cardHTML(f))); });
+      kanban.appendChild(col);
+    });
+  }
+  function mostrarToast(t){
+    document.getElementById('toastIco').textContent=t[0];
+    document.getElementById('toastT').textContent=t[1];
+    document.getElementById('toastS').textContent=t[2];
+    toast.classList.remove('on'); void toast.offsetWidth; toast.classList.add('on');
+  }
+  function limpar(){ timers.forEach(clearTimeout); timers=[]; }
+  function tocar(cena){
+    limpar(); atual=cena; var C=CENAS[cena];
+    if(reduz){ montar(cena,3); mostrarToast(C.passos[3]); return; }
+    toast.classList.remove('on'); montar(cena,-1);
+    [0,1,2,3].forEach(function(i){
+      timers.push(setTimeout(function(){ montar(cena,i); mostrarToast(C.passos[i]); }, 700+i*2300));
+    });
+  }
+  document.querySelectorAll('.chip').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed', String(x===b))});
+      var c=b.getAttribute('data-cena'); document.getElementById('cta-sim').href=WA_CENA[c]; tocar(c);
+    });
+  });
+  document.getElementById('deNovo').addEventListener('click',function(){ tocar(atual); });
+
+  montar('venda',3); mostrarToast(CENAS.venda.passos[3]); escala();
+  if(!reduz && 'IntersectionObserver' in window){
+    var tocou=false; var io2=new IntersectionObserver(function(es){ if(es[0].isIntersecting && !tocou){ tocou=true; tocar(atual); io2.disconnect(); } },{threshold:.4});
+    io2.observe(wrap);
+  }
+
+  /* barra fixa no celular */
+  var hero=document.getElementById('hero'), fim=document.getElementById('final'), barra=document.getElementById('barraM');
+  function onScroll(){ barra.classList.toggle('on', hero.getBoundingClientRect().bottom<0 && fim.getBoundingClientRect().top>window.innerHeight); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+  /* abas genéricas com teclado */
+  function abas(botoes, aoTrocar){
+    botoes.forEach(function(b,i){
+      b.addEventListener('click',function(){ aoTrocar(i); });
+      b.addEventListener('keydown',function(e){
+        var d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0; if(!d) return;
+        e.preventDefault(); var n=(i+d+botoes.length)%botoes.length; aoTrocar(n); botoes[n].focus();
+      });
+    });
+  }
+
+  /* caminho do lead */
+  var etapas=[].slice.call(document.querySelectorAll('.etapa')), paineis=[].slice.call(document.querySelectorAll('.painel-etapa')), trilho=document.getElementById('trilho');
+  function irEtapa(n){
+    etapas.forEach(function(b,i){ b.setAttribute('aria-selected',String(i===n)); b.tabIndex=i===n?0:-1; b.classList.toggle('feita',i<n); });
+    paineis.forEach(function(p,i){ p.hidden=i!==n; });
+    trilho.style.width=(80*n/(etapas.length-1))+'%';
+  }
+  abas(etapas,irEtapa);
+  document.querySelectorAll('[data-ir]').forEach(function(b){ b.addEventListener('click',function(){ var n=+b.getAttribute('data-ir'); irEtapa(n); etapas[n].focus(); }); });
+  irEtapa(0);
+
+  /* corretor x gestor */
+  var abasP=[].slice.call(document.querySelectorAll('.aba')), visoes=[document.getElementById('v-corretor'),document.getElementById('v-gestor')];
+  abas(abasP,function(n){ abasP.forEach(function(b,i){ b.setAttribute('aria-selected',String(i===n)); b.tabIndex=i===n?0:-1; }); visoes.forEach(function(v,i){ v.hidden=i!==n; }); });
+
+  /* monte seu plano */
+  var PLANOS=[{"nome": "Essencial", "lim": "1 usuário e até 300 imóveis", "itens": ["CRM, carteira de imóveis e funil", "Caixa de entrada e agenda", "Indicadores e chat da equipe"]}, {"nome": "Profissional", "lim": "Até 5 usuários e 1.000 imóveis", "itens": ["Tudo do Essencial", "Distribuição de leads", "Propostas e vitrine para o cliente", "Automações e relatório do proprietário"]}, {"nome": "Business", "lim": "Até 10 usuários e 3.000 imóveis", "itens": ["Tudo do Profissional", "Contratos com assinatura por link", "Financeiro e comissões", "Feed para portais e Google Agenda"]}, {"nome": "Enterprise", "lim": "Usuários e imóveis sem limite", "itens": ["Tudo do Business", "Várias unidades", "Implantação consultiva"]}], NUM='5541991998738';
+  var faixa=document.getElementById('corretores'), imoveis=300, extra='nao';
+  function grupo(id,cb){ var bs=[].slice.call(document.querySelectorAll('#'+id+' button')); bs.forEach(function(b){ b.addEventListener('click',function(){ bs.forEach(function(x){x.setAttribute('aria-pressed',String(x===b))}); cb(b.getAttribute('data-v')); calcular(); }); }); }
+  grupo('imoveis',function(v){ imoveis=+v; });
+  grupo('extra',function(v){ extra=v; });
+  faixa.addEventListener('input',calcular);
+  function calcular(){
+    var u=+faixa.value;
+    document.getElementById('corretoresValor').textContent=u+(u===1?' pessoa':' pessoas')+(u===30?' ou mais':'');
+    var i=0;
+    if(u>1||imoveis>300) i=1;
+    if(u>5||imoveis>1000||extra==='sim') i=2;
+    if(u>10||imoveis>3000||u===30) i=3;
+    var p=PLANOS[i];
+    document.getElementById('pNome').textContent=p.nome;
+    document.getElementById('pLim').textContent=p.lim;
+    document.getElementById('pItens').innerHTML=p.itens.map(function(t){return '<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>'+t+'</li>'}).join('');
+    document.getElementById('pCtaTxt').textContent='Quero o plano '+p.nome;
+    var imovTxt=imoveis>3000?'mais de 3.000':'até '+imoveis.toLocaleString('pt-BR');
+    var msg='Oi! Fiz o simulador do SAX CRM: somos '+u+(u===30?' ou mais':'')+' pessoas, com '+imovTxt+' imóveis'+(extra==='sim'?' e precisamos de contrato e financeiro':'')+'. O plano indicado foi o '+p.nome+'. Quero saber o valor e agendar uma demonstração.';
+    document.getElementById('pCta').href='https://wa.me/'+NUM+'?text='+encodeURIComponent(msg);
+  }
+  calcular();
+})();
+</script>
+</body>
+</html>
