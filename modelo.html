@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Site de exemplo | SAX CRM</title>
+<meta name="description" content="Veja como fica o site do seu negócio feito pelo SAX CRM: imobiliária, loja de veículos, odontologia, clínica terapêutica, barbearia e estética.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link id="fontes" rel="stylesheet" href="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fc);color:#1d2330;background:var(--fundo);-webkit-font-smoothing:antialiased;line-height:1.55}
+a{color:inherit}
+.w{max-width:1120px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+h1,h2,h3,.tt{font-family:var(--ft);letter-spacing:-.01em}
+/* faixa do SAX, fora do site do cliente */
+.sax{background:#1d1530;color:#fff;font-family:"Inter Tight",system-ui,sans-serif;position:relative;z-index:60}
+.sax .w{display:flex;align-items:center;gap:14px;min-height:56px;flex-wrap:wrap;padding-top:8px;padding-bottom:8px}
+.sax .lg{color:#ff7a00;display:flex;align-items:center;gap:8px;text-decoration:none;font-weight:700}.sax .lg svg{height:20px;width:auto}
+.sax .aviso{font-size:13px;color:rgba(255,255,255,.75)}
+.sax .segs{display:flex;gap:6px;flex-wrap:wrap;margin-left:auto}
+.sax .segs a{font-size:13px;font-weight:600;text-decoration:none;padding:6px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.25);color:#fff;white-space:nowrap}
+.sax .segs a[aria-current=page]{background:#ff7a00;border-color:#ff7a00;color:#1d1530}
+.sax .criar{font-size:14px;font-weight:700;background:#ff7a00;color:#1d1530;text-decoration:none;padding:9px 16px;border-radius:10px;white-space:nowrap}
+/* site do cliente */
+.topo{position:sticky;top:0;z-index:50;background:var(--h);color:var(--ht);border-bottom:1px solid rgba(0,0,0,.08)}
+.topo .w{display:flex;align-items:center;justify-content:space-between;gap:16px;height:72px}
+.marca{display:flex;align-items:center;gap:10px;font:700 18px var(--ft);text-decoration:none}
+.marca i{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:var(--p);color:var(--pt);font:700 14px var(--fc);font-style:normal;border:1px solid rgba(255,255,255,.2)}
+.nav{display:flex;align-items:center;gap:4px}
+.nav a.l{font-size:14px;font-weight:500;text-decoration:none;padding:8px 12px;border-radius:999px}
+.nav a.l:hover{background:rgba(127,127,127,.12)}
+.wa{display:inline-flex;align-items:center;gap:8px;background:#1fa855;color:#fff;font-weight:600;text-decoration:none;border-radius:999px;padding:0 16px;height:40px;font-size:14px;border:0;cursor:pointer;font-family:inherit}
+.wa svg{width:16px;height:16px}
+.wa.g{height:48px;padding:0 24px;font-size:15px}.wa.g svg{width:20px;height:20px}
+.ag{display:inline-flex;align-items:center;gap:8px;background:var(--d);color:var(--dt);font-weight:600;text-decoration:none;border-radius:999px;padding:0 16px;height:40px;font-size:14px;border:0;cursor:pointer;font-family:inherit}
+.ag.g{height:48px;padding:0 24px;font-size:15px}
+.ag svg{width:16px;height:16px}
+.hero{background:var(--p);color:var(--pt);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 80% at 85% 20%,color-mix(in srgb,var(--d) 45%,transparent),transparent 70%),radial-gradient(40% 60% at 10% 100%,rgba(255,255,255,.12),transparent 70%)}
+.hero .arte{position:absolute;right:clamp(-60px,2vw,40px);bottom:-30px;width:clamp(220px,32vw,400px);opacity:.16;color:var(--pt)}
+.hero .w{position:relative;min-height:440px;display:flex;flex-direction:column;justify-content:flex-end;padding-top:56px;padding-bottom:56px}
+.hero h1{font-size:clamp(34px,5.4vw,56px);line-height:1.06;max-width:15ch;font-weight:700}
+.hero p{margin-top:14px;font-size:clamp(16px,1.6vw,19px);max-width:46ch;opacity:.88}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.hero .sec{display:inline-flex;align-items:center;height:48px;padding:0 22px;border-radius:999px;border:1px solid color-mix(in srgb,var(--pt) 45%,transparent);text-decoration:none;font-weight:600;font-size:15px}
+.busca{position:relative;z-index:2;margin-top:-34px}
+.busca form{background:#fff;border-radius:18px;padding:14px;display:grid;grid-template-columns:1.6fr 1fr auto;gap:10px;box-shadow:0 24px 48px -24px rgba(20,25,40,.35),0 0 0 1px rgba(20,25,40,.06)}
+.busca input,.busca select{height:48px;border-radius:12px;border:1px solid #e3e7ee;padding:0 14px;font:inherit;font-size:15px;background:#fff;color:#1d2330;width:100%}
+.busca button{height:48px;border:0;border-radius:12px;padding:0 24px;font:600 15px var(--fc);background:var(--d);color:var(--dt);cursor:pointer}
+section.s{padding:64px 0}
+.s h2{font-size:clamp(26px,3vw,32px);font-weight:700}
+.s .sub2{color:#5b6474;margin-top:4px;font-size:15px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:24px}
+.card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 0 0 1px #e3e7ee;display:flex;flex-direction:column}
+.foto{aspect-ratio:4/3;position:relative;display:grid;place-items:center;color:var(--p);background:linear-gradient(135deg,color-mix(in srgb,var(--p) 14%,#fff),color-mix(in srgb,var(--d) 22%,#fff))}
+.foto svg{width:64px;height:64px;opacity:.75}
+.foto .tag{position:absolute;left:12px;top:12px;background:#fff;color:#1d2330;font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px}
+.foto .res{position:absolute;inset:auto 0 0 0;background:var(--d);color:var(--dt);font-size:12px;font-weight:700;padding:6px 12px}
+.card .c{padding:18px 18px 20px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card .k{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5b6474}
+.card h3{font-size:18px;line-height:1.3}
+.card .d{font-size:14px;color:#5b6474}
+.card .v{margin-top:auto;padding-top:8px;display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.card .v b{font-size:19px;color:var(--p)}
+.card .v span{font-size:13px;color:#5b6474}
+.card .bt{display:flex;flex-wrap:wrap;gap:8px;padding-top:8px}
+.cats{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.cats button{font:600 14px var(--fc);padding:7px 16px;border-radius:999px;border:1px solid #e3e7ee;background:#fff;color:#5b6474;cursor:pointer}
+.cats button[aria-selected=true]{background:var(--p);color:var(--pt);border-color:transparent}
+.sobre{background:color-mix(in srgb,var(--p) 6%,#fff)}
+.sobre .w{display:grid;grid-template-columns:1fr 1.4fr;gap:32px;align-items:center}
+.sobre p{font-size:17px;color:#3b4352;max-width:62ch}
+.contato .w{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.contato .box{background:#fff;border-radius:18px;padding:24px;box-shadow:0 0 0 1px #e3e7ee;display:grid;gap:10px}
+.contato input,.contato textarea{height:46px;border-radius:12px;border:1px solid #e3e7ee;padding:0 14px;font:inherit;font-size:15px;width:100%}
+.contato textarea{height:auto;padding:10px 14px}
+.contato .env{height:48px;border:0;border-radius:999px;font:600 15px var(--fc);background:var(--p);color:var(--pt);cursor:pointer}
+footer{background:#1d2330;color:#c9cfda;font-size:14px}
+footer .w{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-top:32px;padding-bottom:32px}
+.flut{position:fixed;right:20px;bottom:20px;z-index:70;width:56px;height:56px;border-radius:50%;background:#1fa855;color:#fff;display:grid;place-items:center;box-shadow:0 10px 30px -8px rgba(31,168,85,.7);border:0;cursor:pointer}
+.flut svg{width:28px;height:28px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;transition:.25s;background:#1d1530;color:#fff;font:500 14px "Inter Tight",system-ui;padding:12px 18px;border-radius:12px;z-index:80;max-width:calc(100vw - 32px);text-align:center;pointer-events:none}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.fim{background:#1d1530;color:#fff;font-family:"Inter Tight",system-ui,sans-serif;text-align:center;padding:48px 16px}
+.fim h2{font-family:"Inter Tight",system-ui;font-size:clamp(24px,3vw,32px)}
+.fim p{color:rgba(255,255,255,.75);margin:8px auto 20px;max-width:52ch}
+.fim a{display:inline-block;background:#ff7a00;color:#1d1530;font-weight:700;text-decoration:none;padding:14px 24px;border-radius:12px}
+@media (max-width:900px){.grid{grid-template-columns:1fr 1fr}.sobre .w,.contato .w{grid-template-columns:1fr}.nav a.l{display:none}.busca form{grid-template-columns:1fr}}
+@media (max-width:600px){.grid{grid-template-columns:1fr}.sax .aviso{display:none}.sax .segs{margin-left:0;order:3;width:100%;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}.sax .criar{margin-left:auto}.topo .wa .txt{display:none}.marca{font-size:16px}.hero .w{min-height:420px}}
+</style>
+</head>
+<body>
+<div class="sax"><div class="w">
+  <a class="lg" href="./" aria-label="SAX CRM"><svg viewBox="0 0 977 295" role="img" aria-label="SAX"><path fill="currentColor" fill-rule="evenodd" d="M3.6 291.4C2.3 290.1 2.3 289.4 3.6 285.8C6.0 279.0 12.5 267.5 18.5 259.6C30.1 244.1 46.8 233.4 67.0 228.4C73.7 226.8 80.6 226.5 130.5 226.0C185.5 225.5 186.6 225.5 190.5 223.3C208.7 213.5 208.8 187.4 190.6 177.7C186.6 175.5 185.5 175.5 132.5 174.9C74.2 174.2 72.6 174.1 58.4 168.4C54.6 166.9 51.3 165.4 51.0 165.1C50.7 164.7 49.2 163.9 47.6 163.2C40.2 159.9 23.4 144.9 19.6 138.2C19.1 137.3 17.9 135.8 17.1 134.8C13.4 130.9 6.4 114.9 4.6 106.4C2.3 95.5 1.9 88.7 3.0 78.8C7.1 43.0 34.1 12.4 69.3 4.0C77.2 2.1 81.5 2.0 182.8 2.0C279.0 2.0 288.1 2.1 288.7 3.6C289.7 6.3 276.8 30.7 270.1 38.7C259.4 51.3 244.8 60.6 228.4 65.2C220.7 67.4 218.6 67.4 156.5 68.0C111.4 68.3 91.7 68.8 89.9 69.7C74.8 76.5 72.0 97.7 85.1 107.1C91.8 111.8 94.1 112.0 146.6 112.0C197.7 112.0 203.1 112.4 215.5 116.5C228.0 120.7 241.3 129.1 250.8 138.7C277.1 165.6 284.0 203.1 269.1 238.0C264.4 248.9 259.2 256.7 250.6 265.8C239.4 277.6 226.5 285.2 210.2 289.8L200.5 292.5L102.8 292.7C18.1 292.9 4.8 292.7 3.6 291.4Z M643.5 292.1C640.8 291.7 639.6 291.0 639.8 290.1C640.1 288.7 644.2 283.2 656.0 268.5C659.1 264.6 671.5 249.1 683.5 234.0C713.4 196.5 730.6 175.3 735.4 170.1C742.0 163.1 752.8 156.6 761.8 154.1C769.1 152.1 772.0 152.0 806.8 152.0C829.8 152.0 845.9 152.4 849.2 153.1C859.2 155.2 868.8 160.6 877.0 168.9C887.3 179.2 975.1 288.7 974.6 290.5C974.0 292.5 966.6 292.9 936.5 292.6C908.8 292.3 904.9 292.1 899.5 290.3C889.5 287.0 881.6 282.0 875.2 275.0C870.6 270.0 851.0 244.1 851.0 243.1C851.0 242.5 850.6 242.0 850.1 242.0C849.4 242.0 834.2 223.0 818.9 203.0C810.4 191.9 807.6 188.9 806.5 189.7C805.3 190.6 766.6 240.5 752.0 260.0C746.9 266.9 741.3 274.0 739.6 275.9C734.8 281.1 725.3 287.1 717.6 289.8C710.7 292.2 709.7 292.3 679.0 292.5C661.7 292.7 645.7 292.5 643.5 292.1Z M401.1 290.4C366.9 284.6 333.3 259.9 318.5 229.5C316.4 225.1 314.2 220.6 313.7 219.6C311.4 214.8 307.0 200.3 307.0 197.2C307.0 195.4 306.5 193.0 306.0 192.0C304.6 189.3 304.6 104.7 306.0 102.1C306.5 101.0 307.0 98.6 307.0 96.8C307.0 88.2 316.6 65.4 326.3 51.0C336.6 35.7 356.3 19.0 372.0 12.1C375.0 10.8 379.0 9.1 380.8 8.3C382.5 7.5 387.7 5.9 392.3 4.7C400.3 2.5 401.7 2.5 465.0 2.5C529.4 2.5 529.5 2.5 538.0 4.8C551.1 8.4 559.3 12.1 570.9 19.8C599.6 38.9 619.3 72.1 623.1 108.0C624.4 121.2 624.2 289.0 622.8 290.7C621.4 292.4 616.1 292.3 608.0 290.6C586.0 285.9 569.5 271.5 561.4 250.0L558.6 242.5L558.0 181.5C557.3 114.9 557.4 117.0 551.1 103.4C545.1 90.7 534.5 79.7 522.5 74.0C510.8 68.4 507.2 68.0 464.4 68.0C428.7 68.0 424.6 68.2 417.6 70.0C406.2 72.9 398.6 77.3 389.8 86.1C383.6 92.4 381.3 95.5 377.7 103.1C371.3 116.5 370.8 120.3 371.2 150.5C371.5 175.8 371.6 176.7 374.2 183.8C380.3 200.6 390.6 212.4 405.5 219.5C410.4 221.9 416.9 224.3 419.8 224.9C423.2 225.6 443.9 226.0 477.9 226.0C521.4 226.0 530.9 226.2 531.3 227.3C532.8 231.4 527.7 247.1 521.5 257.5C511.7 273.7 494.7 285.9 476.3 290.0C468.6 291.7 463.8 291.9 438.5 291.9C418.7 291.8 406.8 291.3 401.1 290.4Z M764.6 143.3C751.9 140.7 738.4 130.9 726.4 115.5C724.3 112.8 720.2 107.8 717.5 104.5C714.7 101.2 709.8 94.9 706.5 90.5C703.2 86.1 700.3 82.3 699.9 82.0C699.4 81.5 677.0 53.3 673.2 48.2C672.3 47.0 670.8 45.2 669.9 44.2C665.9 39.8 653.0 22.9 653.0 22.0C653.0 21.5 652.7 21.0 652.2 21.0C651.0 21.0 639.0 5.3 639.0 3.6C639.0 2.2 642.7 2.0 673.8 2.0C711.5 2.0 713.4 2.2 724.9 7.8C732.5 11.4 739.7 18.4 749.6 31.8C784.5 78.7 806.6 108.0 807.2 108.0C807.9 108.0 818.2 94.5 859.5 39.5C874.8 19.2 881.5 12.3 890.1 8.0C900.8 2.6 905.2 2.0 941.1 2.0C967.6 2.0 973.9 2.3 974.3 3.3C974.9 4.8 967.0 15.4 937.1 53.3C926.3 67.0 914.6 81.8 911.0 86.4C875.9 130.8 874.6 132.3 864.0 137.9C852.2 144.2 851.3 144.3 809.1 144.4C782.2 144.5 768.8 144.1 764.6 143.3Z"/></svg> CRM</a>
+  <span class="aviso">Site de exemplo. Empresa fictícia, para você ver como fica o seu.</span>
+  <nav class="segs" id="segs" aria-label="Escolha o segmento"></nav>
+  <a class="criar" href="https://sax-crm.vercel.app/cadastro">Criar o meu</a>
+</div></div>
+<div id="site"></div>
+<div class="toast" id="toast" role="status"></div>
+<script>
+var M={"imobiliaria": {"seg": "Imobiliária", "nome": "Morada Prime Imóveis", "p": "#12355b", "d": "#d4a017", "h": "#ffffff", "ht": "#12355b", "fundo": "#f7f8fb", "fonte": "elegante", "titulo": "Encontre o imóvel certo para você", "sub": "Casas, apartamentos e terrenos selecionados pela nossa equipe em Curitiba.", "registro": "CRECI 0000-J", "estoque_titulo": "Imóveis disponíveis", "estoque": [{"ic": "predio", "t": "Apartamento 2 quartos no Água Verde", "s": "68 m², 1 vaga, sacada com churrasqueira", "v": "R$ 520.000", "tag": "Venda"}, {"ic": "casa", "t": "Casa com quintal no Bacacheri", "s": "3 quartos, 2 vagas, 140 m²", "v": "R$ 3.900/mês", "tag": "Aluguel"}, {"ic": "predio", "t": "Studio mobiliado no Centro", "s": "32 m², perto da Rua XV", "v": "R$ 1.850/mês", "tag": "Aluguel", "res": true}], "catalogo": "Serviços", "itens": [{"ic": "doc", "tipo": "Serviço", "n": "Avaliação do seu imóvel", "d": "Visita técnica e laudo de preço com base nas vendas da região.", "v": "Sem custo"}, {"ic": "chave", "tipo": "Serviço", "n": "Administração de aluguel", "d": "Cobrança, repasse ao proprietário e vistoria de entrada e saída.", "v": "8% do aluguel"}], "sobre": "Há 15 anos ajudamos famílias de Curitiba a comprar, vender e alugar com segurança. Cada imóvel do site foi visitado pela nossa equipe."}, "veiculos": {"seg": "Loja de veículos", "nome": "Rota Motors Seminovos", "p": "#2b2f36", "d": "#ef6f53", "h": "#111111", "ht": "#ffffff", "fundo": "#f5f5f4", "fonte": "moderna", "titulo": "Encontre o seu próximo carro", "sub": "Seminovos revisados, com procedência, laudo e as melhores condições.", "registro": "", "estoque_titulo": "Veículos disponíveis", "estoque": [{"ic": "carro", "t": "Hatch 1.0 Turbo 2022", "s": "38 mil km, automático, único dono", "v": "R$ 79.900", "tag": "Hatch"}, {"ic": "carro", "t": "SUV 1.3 Turbo 2021", "s": "52 mil km, revisões na concessionária", "v": "R$ 112.900", "tag": "SUV", "res": true}, {"ic": "carro", "t": "Sedã 2.0 2020", "s": "61 mil km, couro, central multimídia", "v": "R$ 98.500", "tag": "Sedã"}], "catalogo": "Serviços da loja", "itens": [{"ic": "doc", "tipo": "Serviço", "n": "Financiamento em até 60x", "d": "Simulação com vários bancos na hora, com ou sem entrada.", "v": "Sob consulta"}, {"ic": "carro", "tipo": "Serviço", "n": "Avaliação do seu usado na troca", "d": "Avaliamos o seu carro na hora e abatemos do valor.", "v": "Sem custo"}], "sobre": "Todos os carros passam por vistoria cautelar e revisão antes de entrar no site. Garantia de motor e câmbio em todo o estoque."}, "odontologia": {"seg": "Odontologia", "nome": "Clínica Sorriso Pleno", "p": "#0f5c7a", "d": "#2bb3c0", "h": "#ffffff", "ht": "#0f5c7a", "fundo": "#f4f9fb", "fonte": "moderna", "titulo": "Cuide do seu sorriso com quem entende", "sub": "Tratamentos para toda a família, do check-up à reabilitação.", "registro": "CRO-PR 0000", "agendar": true, "catalogo": "Tratamentos", "itens": [{"ic": "dente", "tipo": "Tratamento", "cat": "Prevenção", "n": "Avaliação e limpeza", "d": "Consulta, raspagem e aplicação de flúor.", "v": "R$ 180", "min": 60}, {"ic": "brilho", "tipo": "Tratamento", "cat": "Estética", "n": "Clareamento dental", "d": "Consultório e moldeira para casa, com acompanhamento.", "v": "a partir de R$ 900", "min": 60}, {"ic": "dente", "tipo": "Tratamento", "cat": "Ortodontia", "n": "Alinhadores invisíveis", "d": "Planejamento digital do sorriso e alinhadores transparentes.", "v": "Sob consulta", "min": 45}, {"ic": "dente", "tipo": "Tratamento", "cat": "Reabilitação", "n": "Implante dentário", "d": "Avaliação com tomografia e plano de tratamento em parcelas.", "v": "a partir de R$ 2.900", "min": 90}, {"ic": "gota", "tipo": "Produto", "cat": "Prevenção", "n": "Kit clareamento caseiro", "d": "Gel e moldeira personalizada para manutenção.", "v": "R$ 260"}, {"ic": "dente", "tipo": "Tratamento", "cat": "Prevenção", "n": "Odontopediatria", "d": "Atendimento lúdico para crianças a partir de 2 anos.", "v": "R$ 160", "min": 40}], "sobre": "Equipe com especialistas em ortodontia, implantes e estética. Estacionamento próprio e atendimento aos sábados."}, "terapia": {"seg": "Clínica terapêutica", "nome": "Espaço Fala e Mente", "p": "#1f5f4a", "d": "#e0b15c", "h": "#f6efe4", "ht": "#1f3d33", "fundo": "#fbf8f2", "fonte": "classica", "titulo": "Um espaço para cuidar de você", "sub": "Psicologia e fonoaudiologia com atendimento acolhedor, presencial e online.", "registro": "", "agendar": true, "catalogo": "Atendimentos", "itens": [{"ic": "coracao", "tipo": "Serviço", "cat": "Psicologia", "n": "Psicoterapia individual", "d": "Sessões semanais para adultos e adolescentes.", "v": "R$ 180", "min": 50}, {"ic": "coracao", "tipo": "Serviço", "cat": "Psicologia", "n": "Terapia online", "d": "Sessão por vídeo, com o mesmo cuidado do consultório.", "v": "R$ 160", "min": 50}, {"ic": "fala", "tipo": "Serviço", "cat": "Fonoaudiologia", "n": "Fono infantil", "d": "Fala, linguagem e alimentação, com orientação para a família.", "v": "R$ 170", "min": 45}, {"ic": "fala", "tipo": "Serviço", "cat": "Fonoaudiologia", "n": "Avaliação de voz", "d": "Para professores, cantores e quem usa muito a voz.", "v": "R$ 200", "min": 60}], "sobre": "Somos uma equipe de psicólogas e fonoaudiólogas. Atendemos com hora marcada e o seu prontuário fica protegido."}, "barbearia": {"seg": "Barbearia", "nome": "Navalha & Co", "p": "#1a1a1a", "d": "#ff7a00", "h": "#1a1a1a", "ht": "#ff7a00", "fundo": "#f4f1ec", "fonte": "moderna", "titulo": "Seu estilo, do jeito certo", "sub": "Corte, barba e cuidado com hora marcada. Sem fila e sem espera.", "registro": "", "agendar": true, "catalogo": "Serviços", "itens": [{"ic": "tesoura", "tipo": "Serviço", "cat": "Cabelo", "n": "Corte", "d": "Tesoura ou máquina, com lavagem e finalização.", "v": "R$ 45", "min": 40}, {"ic": "tesoura", "tipo": "Serviço", "cat": "Barba", "n": "Barba na navalha", "d": "Toalha quente, navalha e balm hidratante.", "v": "R$ 35", "min": 30}, {"ic": "tesoura", "tipo": "Serviço", "cat": "Combo", "n": "Corte e barba", "d": "O combo mais pedido da casa.", "v": "R$ 70", "min": 60}, {"ic": "frasco", "tipo": "Produto", "cat": "Produtos", "n": "Pomada modeladora", "d": "Efeito seco, fixação média. 120 g.", "v": "R$ 49,90"}, {"ic": "frasco", "tipo": "Produto", "cat": "Produtos", "n": "Óleo para barba", "d": "Amacia os fios e tira a coceira. 30 ml.", "v": "R$ 39,90"}, {"ic": "tesoura", "tipo": "Serviço", "cat": "Clube", "n": "Clube Navalha", "d": "Cortes à vontade no mês, com horário garantido.", "v": "R$ 99/mês"}], "sobre": "Barbearia de bairro com cara de clube. Três cadeiras, cerveja gelada e agenda online para você não esperar."}, "estetica": {"seg": "Estética", "nome": "Studio Lumière", "p": "#6d1a36", "d": "#e8a598", "h": "#6d1a36", "ht": "#ffffff", "fundo": "#fbf6f4", "fonte": "elegante", "titulo": "Realce a sua beleza natural", "sub": "Procedimentos faciais e corporais com avaliação personalizada.", "registro": "", "agendar": true, "catalogo": "Procedimentos e produtos", "itens": [{"ic": "brilho", "tipo": "Tratamento", "cat": "Facial", "n": "Limpeza de pele", "d": "Extração, máscara calmante e proteção solar.", "v": "R$ 180", "min": 60}, {"ic": "gota", "tipo": "Tratamento", "cat": "Injetáveis", "n": "Toxina botulínica", "d": "Linhas de expressão da testa e dos olhos. Valor conforme avaliação.", "v": "Sob consulta", "min": 45}, {"ic": "brilho", "tipo": "Tratamento", "cat": "Facial", "n": "Peeling", "d": "Renovação da pele para manchas e textura.", "v": "R$ 250", "min": 45}, {"ic": "gota", "tipo": "Tratamento", "cat": "Injetáveis", "n": "Bioestimulador de colágeno", "d": "Firmeza e qualidade da pele, em sessões.", "v": "a partir de R$ 2.200", "min": 60}, {"ic": "frasco", "tipo": "Produto", "cat": "Produtos", "n": "Protetor solar FPS 50", "d": "Toque seco, com cor. Indicado após procedimentos.", "v": "R$ 129,90"}, {"ic": "frasco", "tipo": "Produto", "cat": "Produtos", "n": "Sérum vitamina C", "d": "Uniformiza o tom e ilumina. 30 ml.", "v": "R$ 149"}], "sobre": "Studio com biomédica e esteticista. Toda paciente passa por avaliação antes do primeiro procedimento."}}, ORDEM=["imobiliaria", "veiculos", "odontologia", "terapia", "barbearia", "estetica"], FONTES={"moderna": ["'Plus Jakarta Sans'", "'Plus Jakarta Sans'", "Plus+Jakarta+Sans:wght@400;500;600;700;800"], "elegante": ["'Fraunces'", "'Figtree'", "Fraunces:opsz,wght@9..144,500;9..144,600&family=Figtree:wght@400;500;600;700"], "classica": ["'Lora'", "'Source Sans 3'", "Lora:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700"]}, ICO={"casa": "<path d=\"M3 21h18\"/><path d=\"M5 21V9l7-5 7 5v12\"/><path d=\"M10 21v-6h4v6\"/>", "predio": "<rect x=\"5\" y=\"3\" width=\"14\" height=\"18\" rx=\"1\"/><path d=\"M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2\"/>", "chave": "<circle cx=\"8\" cy=\"15\" r=\"4\"/><path d=\"m11 12 8-8M16 7l2 2M14 9l2 2\"/>", "carro": "<path d=\"M5 17h14v-5l-2-5H7l-2 5z\"/><circle cx=\"7.5\" cy=\"17.5\" r=\"1.8\"/><circle cx=\"16.5\" cy=\"17.5\" r=\"1.8\"/><path d=\"M5 12h14\"/>", "doc": "<path d=\"M7 3h7l5 5v13H7z\"/><path d=\"M14 3v5h5M10 13h6M10 17h6\"/>", "dente": "<path d=\"M8 3c-2.5 0-4 2-4 4.5 0 3 1.2 4.5 1.8 7.5.5 2.6 1 6 2.6 6 1.4 0 1.6-3.5 2.2-5.2.4-1 .8-1.3 1.4-1.3s1 .3 1.4 1.3c.6 1.7.8 5.2 2.2 5.2 1.6 0 2.1-3.4 2.6-6 .6-3 1.8-4.5 1.8-7.5C20 5 18.5 3 16 3c-1.6 0-2.6.8-4 .8S9.6 3 8 3z\"/>", "brilho": "<path d=\"M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z\"/><path d=\"M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z\"/>", "coracao": "<path d=\"M12 21s-7-4.4-9.3-9A5.3 5.3 0 0 1 12 6a5.3 5.3 0 0 1 9.3 6c-2.3 4.6-9.3 9-9.3 9z\"/>", "fala": "<path d=\"M4 5h16v11H9l-5 4z\"/><path d=\"M8 9h8M8 12h5\"/>", "tesoura": "<circle cx=\"6\" cy=\"6\" r=\"3\"/><circle cx=\"6\" cy=\"18\" r=\"3\"/><path d=\"M20 4 8.1 15.9M14.5 14.5 20 20M8.1 8.1 12 12\"/>", "frasco": "<path d=\"M9 3h6v3l2 3v12H7V9l2-3z\"/><path d=\"M7 13h10\"/>", "gota": "<path d=\"M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z\"/>"}, CAD="https://sax-crm.vercel.app/cadastro";
+var WA='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.47-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.47 1.07 2.88 1.21 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.27.49 1.7.63.72.23 1.37.2 1.88.12.57-.09 1.75-.72 2-1.4.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.8a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.89 9.88m8.41-18.3A11.81 11.81 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.24-6.16-3.48-8.4"/></svg>';
+var CAL='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>';
+function ic(n,c){return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"'+(c?' class="'+c+'"':'')+'>'+ICO[n]+'</svg>';}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]});}
+function contr(h){var n=parseInt(h.slice(1),16),r=(n>>16)&255,g=(n>>8)&255,b=n&255;var L=[r,g,b].map(function(c){c/=255;return c<=.03928?c/12.92:Math.pow((c+.055)/1.055,2.4)});return .2126*L[0]+.7152*L[1]+.0722*L[2]>.45?"#1d2330":"#ffffff";}
+function toast(t){var e=document.getElementById("toast");e.textContent=t;e.classList.add("on");clearTimeout(e._t);e._t=setTimeout(function(){e.classList.remove("on")},2600);}
+function bWa(txt,g){return '<button type="button" class="wa'+(g?' g':'')+'" data-acao="wa">'+WA+'<span class="txt">'+esc(txt)+'</span></button>';}
+function bAg(m,g){return m.agendar?'<button type="button" class="ag'+(g?' g':'')+'" data-acao="ag">'+CAL+' Agendar</button>':'';}
+
+function render(k){
+  var m=M[k]; if(!m){k="odontologia";m=M[k];}
+  var f=FONTES[m.fonte];
+  document.getElementById("fontes").href="https://fonts.googleapis.com/css2?family="+f[2]+"&display=swap";
+  var r=document.documentElement.style;
+  r.setProperty("--p",m.p);r.setProperty("--pt",contr(m.p));r.setProperty("--d",m.d);r.setProperty("--dt",contr(m.d));
+  r.setProperty("--h",m.h);r.setProperty("--ht",m.ht);r.setProperty("--fundo",m.fundo);
+  r.setProperty("--ft",f[0]+", system-ui, sans-serif");r.setProperty("--fc",f[1]+", system-ui, sans-serif");
+  document.title=m.nome+" | Site de exemplo do SAX CRM";
+  document.getElementById("segs").innerHTML=ORDEM.map(function(s){return '<a href="?seg='+s+'"'+(s===k?' aria-current="page"':'')+' data-seg="'+s+'">'+esc(M[s].seg)+'</a>'}).join("");
+  var ini=m.nome.split(/\s+/).filter(function(x){return /[A-Za-zÀ-ú]/.test(x)}).slice(0,2).map(function(x){return x[0]}).join("").toUpperCase();
+  var temEst=!!m.estoque, h="";
+  h+='<header class="topo"><div class="w"><a class="marca" href="#"><i>'+ini+'</i>'+esc(m.nome)+'</a><nav class="nav">';
+  if(temEst)h+='<a class="l" href="#estoque">'+(k==="veiculos"?"Veículos":"Imóveis")+'</a>';
+  h+='<a class="l" href="#catalogo">'+esc(m.catalogo)+'</a><a class="l" href="#sobre">Quem somos</a><a class="l" href="#contato">Contato</a>'+bWa("Chamar no WhatsApp")+'</nav></div></header>';
+  h+='<section class="hero">'+ic(ICONE_HERO[k],"arte")+'<div class="w"><h1>'+esc(m.titulo)+'</h1><p>'+esc(m.sub)+'</p><div class="cta">'+bAg(m,true)+bWa("Chamar no WhatsApp",true);
+  if(!temEst)h+='<a class="sec" href="#catalogo">Ver '+esc(m.catalogo.toLowerCase())+'</a>';
+  h+='</div></div></section>';
+  if(temEst){
+    h+='<div class="busca w"><form onsubmit="event.preventDefault();document.getElementById(\'estoque\').scrollIntoView({behavior:\'smooth\'})"><input aria-label="Buscar" placeholder="'+(k==="veiculos"?"Marca, modelo ou código":"Bairro, cidade ou código")+'"><select aria-label="Tipo"><option>Todos os tipos</option></select><button>Buscar</button></form></div>';
+    h+='<section class="s" id="estoque"><div class="w"><h2>'+esc(m.estoque_titulo)+'</h2><p class="sub2">'+m.estoque.length+' '+(k==="veiculos"?"veículos":"imóveis")+' no exemplo</p><div class="grid">';
+    m.estoque.forEach(function(e){h+='<article class="card"><div class="foto">'+ic(e.ic)+'<span class="tag">'+esc(e.tag)+'</span>'+(e.res?'<span class="res">Reservado</span>':'')+'</div><div class="c"><h3>'+esc(e.t)+'</h3><p class="d">'+esc(e.s)+'</p><div class="v"><b>'+esc(e.v)+'</b></div><div class="bt">'+bWa("Quero saber mais")+'</div></div></article>';});
+    h+='</div></div></section>';
+  }
+  var cats=[];m.itens.forEach(function(i){if(i.cat&&cats.indexOf(i.cat)<0)cats.push(i.cat)});
+  h+='<section class="s" id="catalogo"'+(temEst?' style="padding-top:8px"':'')+'><div class="w"><h2>'+esc(m.catalogo)+'</h2>';
+  if(cats.length>1)h+='<div class="cats" role="tablist">'+['Todos'].concat(cats).map(function(c,i){return '<button type="button" role="tab" aria-selected="'+(i===0)+'" data-cat="'+(i?esc(c):"")+'">'+esc(c)+'</button>'}).join("")+'</div>';
+  h+='<div class="grid" id="itens">';
+  m.itens.forEach(function(i){h+='<article class="card" data-c="'+esc(i.cat||"")+'"><div class="foto">'+ic(i.ic)+'</div><div class="c"><p class="k">'+esc(i.tipo)+(i.cat?' · '+esc(i.cat):'')+'</p><h3>'+esc(i.n)+'</h3><p class="d">'+esc(i.d)+'</p><div class="v"><b>'+esc(i.v)+'</b>'+(i.min?'<span>'+i.min+' min</span>':'')+'</div><div class="bt">'+(i.tipo!=="Produto"?bAg(m):'')+bWa(i.tipo==="Produto"?"Quero este":"Tirar dúvida")+'</div></div></article>';});
+  h+='</div></div></section>';
+  h+='<section class="s sobre" id="sobre"><div class="w"><h2>Quem somos</h2><p>'+esc(m.sobre)+'</p></div></section>';
+  var form=["imobiliaria","veiculos","odontologia","estetica"].indexOf(k)>=0;
+  h+='<section class="s contato" id="contato"><div class="w"><div><h2>Fale com a gente</h2><p class="sub2" style="margin:10px 0 22px;max-width:44ch">Tire dúvidas, peça um orçamento ou marque o seu horário.</p><div class="cta" style="display:flex;flex-wrap:wrap;gap:12px">'+bAg(m,true)+bWa("Chamar no WhatsApp",true)+'</div></div>';
+  if(form)h+='<form class="box" onsubmit="event.preventDefault();toast(\'No seu site, este contato entra no CRM como lead.\')"><p class="tt" style="font-weight:700;font-size:17px">Prefere que a gente ligue?</p><input placeholder="Seu nome" aria-label="Seu nome"><input placeholder="WhatsApp com DDD" aria-label="WhatsApp"><textarea rows="3" placeholder="Conte o que você precisa (opcional)" aria-label="Mensagem"></textarea><button class="env">Enviar contato</button></form>';
+  h+='</div></section>';
+  h+='<footer><div class="w"><span>© '+new Date().getFullYear()+' '+esc(m.nome)+(m.registro?' · '+esc(m.registro):'')+'</span><span>Site feito com SAX CRM</span></div></footer>';
+  h+='<div class="fim"><h2>Gostou? O seu fica assim, com a sua marca.</h2><p>No SAX CRM você monta este site em minutos: logo, cores, catálogo e WhatsApp. O que muda no CRM aparece no site na hora.</p><a href="'+CAD+'">Criar meu site com o SAX</a></div>';
+  h+='<button type="button" class="flut" data-acao="wa" aria-label="Conversar no WhatsApp">'+WA+'</button>';
+  document.getElementById("site").innerHTML=h;
+  window.scrollTo(0,0);
+}
+var ICONE_HERO={imobiliaria:"casa",veiculos:"carro",odontologia:"dente",terapia:"coracao",barbearia:"tesoura",estetica:"brilho"};
+document.addEventListener("click",function(e){
+  var s=e.target.closest("[data-seg]");if(s){e.preventDefault();history.replaceState(null,"","?seg="+s.dataset.seg);render(s.dataset.seg);return;}
+  var a=e.target.closest("[data-acao]");if(a){toast(a.dataset.acao==="wa"?"No seu site, este botão abre o WhatsApp da sua equipe com a mensagem pronta.":"No seu site, este botão abre a sua agenda online com os horários livres.");return;}
+  var c=e.target.closest("[data-cat]");if(c){var v=c.dataset.cat;document.querySelectorAll(".cats button").forEach(function(b){b.setAttribute("aria-selected",b===c)});document.querySelectorAll("#itens .card").forEach(function(x){x.style.display=!v||x.dataset.c===v?"":"none"});}
+});
+render(new URLSearchParams(location.search).get("seg")||"odontologia");
+</script>
+</body>
+</html>
