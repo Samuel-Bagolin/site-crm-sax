@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 Disallow: /modelo.html
-Sitemap: https://site-crm-sax.vercel.app/sitemap.xml
+Sitemap: https://www.gruposax.com.br/sitemap.xml
