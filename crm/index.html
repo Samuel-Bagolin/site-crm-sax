@@ -409,10 +409,45 @@ details{transition:background .2s}details summary:hover{color:var(--roxo)}
 @media (max-width:1020px){.ia-grade{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:560px){.ia-grade{grid-template-columns:1fr}.ia-fim{padding:20px}}
 
-.grupo-faixa{background:#120c20;color:rgba(255,255,255,.7);font-size:13px}
+.grupo-faixa{background:#22014f;color:rgba(255,255,255,.7);font-size:13px}
 .grupo-faixa .wrap{display:flex;align-items:center;gap:6px 18px;height:34px;overflow-x:auto;white-space:nowrap}
 .grupo-faixa a{text-decoration:none;color:inherit}.grupo-faixa a:hover{color:#fff}.grupo-faixa a.on{color:#fff;font-weight:600}
 .grupo-faixa .vt{margin-right:auto;color:#ffc58f}.grupo-faixa .vt.on{color:#ffc58f}
+/* oito segmentos recolhidos: um por vez, conforme a rolagem */
+.seg-nav{list-style:none;display:flex;flex-direction:column;gap:4px}
+.seg-nav button{all:unset;cursor:pointer;display:flex;align-items:center;gap:12px;width:100%;box-sizing:border-box;padding:10px 12px;border-radius:12px;font:600 15px/1.2 "Inter Tight",sans-serif;color:#6b5f86;transition:background .25s,color .25s}
+.seg-nav button span{font:500 11px var(--mono);letter-spacing:.08em;color:#a59cb8;transition:color .25s}
+.seg-nav button:hover{background:rgba(74,3,162,.06);color:var(--tinta)}
+.seg-nav button.on{background:var(--roxo);color:#fff}
+.seg-nav button.on span{color:#ffc58f}
+.seg-nav button:focus-visible{outline:2px solid var(--laranja);outline-offset:2px}
+.seg-pilha{position:relative}
+.seg-pilha .seg{border-top:0}
+.seg-barra{display:none}
+@media (min-width:1021px){
+  .seg-palco{height:calc((var(--n) - 1) * 70vh + 100vh - 110px);position:relative}
+  .seg-fixo{position:sticky;top:110px;height:calc(100vh - 120px);display:grid;grid-template-columns:200px 1fr;gap:clamp(24px,3vw,44px);align-items:center}
+  .seg-pilha{height:100%}
+  .seg-pilha .seg{position:absolute;inset:0;padding:0;opacity:0;transform:translateY(46px);transition:opacity .5s ease,transform .6s cubic-bezier(.2,.7,.2,1);pointer-events:none;visibility:hidden}
+  .seg-pilha .seg.passou{transform:translateY(-46px)}
+  .seg-pilha .seg.ativo{opacity:1;transform:none;pointer-events:auto;visibility:visible}
+  .seg-pilha .seg .tela img{max-height:calc(100vh - 330px);width:100%;object-fit:cover;object-position:top}
+  .seg-pilha .seg,.seg-pilha .seg.inv{grid-template-columns:.78fr 1.22fr;gap:clamp(24px,3vw,44px)}
+  .seg-pilha .seg.inv .seg-txt{order:0}
+  .seg-pilha .seg h3{font-size:clamp(30px,3.4vw,46px)}
+  .seg-pilha .seg ul{margin:14px 0 20px;gap:7px}
+  .seg-barra{display:block;position:absolute;left:0;bottom:8px;width:200px;height:3px;border-radius:3px;background:rgba(74,3,162,.12);overflow:hidden}
+  .seg-barra i{display:block;height:100%;width:0;background:var(--laranja);transition:width .15s linear}
+}
+@media (max-width:1020px){
+  .seg-nav{flex-direction:row;overflow-x:auto;gap:8px;padding-bottom:6px;margin-bottom:8px;scrollbar-width:none}
+  .seg-nav::-webkit-scrollbar{display:none}
+  .seg-nav button{white-space:nowrap;width:auto;border:1px solid var(--fio);background:#fff}
+  .seg-nav button.on{border-color:var(--roxo)}
+  .seg-pilha .seg{display:none}
+  .seg-pilha .seg.ativo{display:grid}
+}
+@media (prefers-reduced-motion:reduce){.seg-pilha .seg{transition:none}}
 </style>
 </head>
 <body>
@@ -468,6 +503,10 @@ details{transition:background .2s}details summary:hover{color:var(--roxo)}
       <p>O que serve para a imobiliária não serve para a barbearia. Por isso cada segmento tem as próprias telas, os próprios termos e as próprias contas, sem campo sobrando.</p>
     </div>
     
+<div class="seg-palco" id="segPalco" style="--n:8">
+<div class="seg-fixo">
+<ol class="seg-nav" aria-label="Escolha o segmento"><li><button type="button" data-i="0" aria-controls="seg-imobiliaria"><span>01</span>Imobiliária</button></li><li><button type="button" data-i="1" aria-controls="seg-veiculos"><span>02</span>Loja de veículos</button></li><li><button type="button" data-i="2" aria-controls="seg-odontologia"><span>03</span>Odontologia</button></li><li><button type="button" data-i="3" aria-controls="seg-terapia"><span>04</span>Clínica terapêutica</button></li><li><button type="button" data-i="4" aria-controls="seg-barbearia"><span>05</span>Barbearia</button></li><li><button type="button" data-i="5" aria-controls="seg-estetica"><span>06</span>Estética</button></li><li><button type="button" data-i="6" aria-controls="seg-comercio"><span>07</span>Restaurante e doceria</button></li><li><button type="button" data-i="7" aria-controls="seg-empresas"><span>08</span>Empresas e serviços</button></li></ol>
+<div class="seg-pilha">
 <article class="seg " id="seg-imobiliaria">
   <div class="seg-txt">
     <p class="rot"><span>01</span> Vendas</p>
@@ -612,6 +651,10 @@ details{transition:background .2s}details summary:hover{color:var(--roxo)}
     <figcaption>Projetos de implantação, do onboarding ao ongoing. Tela real com dados de demonstração.</figcaption>
   </figure>
 </article>
+</div>
+<div class="seg-barra" aria-hidden="true"><i id="segBarra"></i></div>
+</div>
+</div>
   </div>
 </section>
 
@@ -962,12 +1005,34 @@ details{transition:background .2s}details summary:hover{color:var(--roxo)}
 })();
 
 (function(){
-  var sel='.ia-grade li,.ia-fim,.wa .wrap>div,.cab,.seg-txt,.seg .tela,.grade li,.passos li,.dif .wrap>div,.af .wrap>div,.faq-lista details,.final h2,.final p,.final .acoes';
+  var sel='.ia-grade li,.ia-fim,.wa .wrap>div,.cab,.grade li,.passos li,.dif .wrap>div,.af .wrap>div,.faq-lista details,.final h2,.final p,.final .acoes';
   var alvos=[].slice.call(document.querySelectorAll(sel));
   alvos.forEach(function(el){el.classList.add('rv');var irmaos=[].filter.call(el.parentNode.children,function(x){return x.matches(sel);});var i=irmaos.indexOf(el);if(i>0)el.style.transitionDelay=Math.min(i,5)*70+'ms';});
   if(!('IntersectionObserver' in window)){alvos.forEach(function(el){el.classList.add('vis');});return;}
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}});},{rootMargin:'0px 0px -8% 0px',threshold:.08});
   alvos.forEach(function(el){io.observe(el);});
+})();
+
+(function(){
+  var palco=document.getElementById('segPalco'); if(!palco) return;
+  var arts=[].slice.call(palco.querySelectorAll('.seg')), bts=[].slice.call(palco.querySelectorAll('.seg-nav button')), barra=document.getElementById('segBarra');
+  var n=arts.length, atual=-1, mq=window.matchMedia('(min-width:1021px)');
+  function mostrar(i){ if(i===atual) return; atual=i;
+    arts.forEach(function(a,k){a.classList.toggle('ativo',k===i);a.classList.toggle('passou',k<i);});
+    bts.forEach(function(b,k){b.classList.toggle('on',k===i);b.setAttribute('aria-pressed',k===i?'true':'false');});
+    if(!mq.matches){var b=bts[i];if(b&&b.scrollIntoView)b.parentNode.parentNode.scrollTo({left:b.offsetLeft-16,behavior:'smooth'});}
+  }
+  function faixa(){var r=palco.getBoundingClientRect(),fixo=palco.querySelector('.seg-fixo').offsetHeight;return {topo:window.scrollY+r.top,curso:Math.max(1,palco.offsetHeight-fixo)};}
+  function rolou(){ if(!mq.matches) return; var f=faixa(), p=Math.min(1,Math.max(0,(window.scrollY-f.topo)/f.curso));
+    if(barra) barra.style.width=(p*100)+'%'; mostrar(Math.min(n-1,Math.floor(p*n*0.999)));}
+  function irPara(i,ja){ if(mq.matches){var f=faixa();window.scrollTo({top:f.topo+(i+0.5)/n*f.curso,behavior:ja?'auto':'smooth'});rolou();} else { mostrar(i); var t=palco.getBoundingClientRect().top+window.scrollY-120; if(Math.abs(window.scrollY-t)>300) window.scrollTo({top:t,behavior:'smooth'});} }
+  bts.forEach(function(b,i){b.addEventListener('click',function(){irPara(i);});});
+  document.addEventListener('click',function(e){var a=e.target.closest('a[href^="#seg-"]');if(!a)return;var k=arts.findIndex(function(x){return '#'+x.id===a.getAttribute('href');});if(k<0)return;e.preventDefault();irPara(k);});
+  var pend=false; window.addEventListener('scroll',function(){if(pend)return;pend=true;requestAnimationFrame(function(){pend=false;rolou();});},{passive:true});
+  window.addEventListener('resize',rolou); if(mq.addEventListener) mq.addEventListener('change',function(){atual=-1;mostrar(0);rolou();});
+  mostrar(0); rolou();
+  function peloHash(){if(location.hash.indexOf('#seg-')!==0)return;var k=arts.findIndex(function(x){return '#'+x.id===location.hash;});if(k>=0)setTimeout(function(){irPara(k,true);},60);}
+  window.addEventListener('hashchange',peloHash); window.addEventListener('load',peloHash); peloHash();
 })();
 </script>
 </body>

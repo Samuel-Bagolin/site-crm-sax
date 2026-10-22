@@ -26,14 +26,14 @@ a{color:inherit}
 h1,h2,h3{font-family:var(--disp);line-height:1.04;letter-spacing:-.02em}
 h2{font-size:clamp(34px,5vw,56px);font-weight:800}
 .rot{font:500 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;display:block}
-.grupo{background:#120c20;color:rgba(255,255,255,.7);font-size:13px}
+.grupo{background:#22014f;color:rgba(255,255,255,.7);font-size:13px}
 .grupo .wrap{display:flex;align-items:center;gap:6px 18px;height:36px;overflow-x:auto;white-space:nowrap}
 .grupo a{text-decoration:none}.grupo a:hover{color:#fff}.grupo a.on{color:#fff;font-weight:600}
 .grupo .vt{margin-right:auto;color:#ffc58f}
 .marca{display:inline-flex;align-items:center;gap:10px;color:var(--laranja);text-decoration:none}
 .marca svg{width:72px;height:auto;display:block}
 .marca span{font:500 13px/1.1 "Inter Tight",sans-serif;letter-spacing:.06em;color:rgba(255,255,255,.75);padding-left:10px;border-left:1px solid rgba(255,255,255,.25)}
-header.topo{position:sticky;top:0;z-index:20;background:var(--tinta);color:#fff;border-bottom:1px solid var(--fio)}
+header.topo{position:sticky;top:0;z-index:20;background:#3a0285;color:#fff;border-bottom:1px solid var(--fio)}
 header.topo .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:68px}
 header nav{display:flex;gap:4px}
 header nav a{text-decoration:none;font-size:15px;color:rgba(255,255,255,.78);padding:8px 12px;border-radius:10px}
@@ -42,8 +42,8 @@ header nav a:hover{color:#fff;background:rgba(255,255,255,.07)}
 .btn:active{transform:translateY(5px);box-shadow:0 1px 0 #b85500}
 .btn svg{width:18px;height:18px}
 .link{font-weight:600;color:inherit;text-underline-offset:4px}
-.hero{position:relative;background:var(--tinta);color:#fff;padding:clamp(56px,8vw,100px) 0 clamp(64px,8vw,110px);overflow:hidden}
-.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(700px 520px at 90% 10%,rgba(37,211,102,.20),transparent 60%),radial-gradient(800px 600px at 0% 100%,rgba(120,40,230,.5),transparent 60%);pointer-events:none}
+.hero{position:relative;background:linear-gradient(175deg,#4a03a2,#2b0163);color:#fff;padding:clamp(56px,8vw,100px) 0 clamp(64px,8vw,110px);overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(700px 520px at 90% 10%,rgba(37,211,102,.20),transparent 60%),radial-gradient(800px 600px at 0% 100%,rgba(74,3,162,.9),transparent 60%);pointer-events:none}
 .hero::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.06) 1.5px,transparent 1.5px);background-size:28px 28px;pointer-events:none}
 .hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(32px,5vw,64px);align-items:center}
 .hero .wrap>*{min-width:0}
@@ -68,7 +68,7 @@ header nav a:hover{color:#fff;background:rgba(255,255,255,.07)}
 .m.ia .t{display:inline-block;font:500 9px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--verde2);background:#dcfce7;border-radius:5px;padding:1px 6px;margin-bottom:3px}
 .dig{align-self:flex-start;background:#fff;border-radius:11px;padding:9px 11px;display:flex;gap:5px}
 .dig i{width:7px;height:7px;border-radius:50%;background:#9aa;animation:pis 1s infinite}.dig i:nth-child(2){animation-delay:.15s}.dig i:nth-child(3){animation-delay:.3s}
-.ag-cab{background:#120c20;border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:10px;color:#fff;height:430px;overflow:hidden}
+.ag-cab{background:#22014f;border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:10px;color:#fff;height:430px;overflow:hidden}
 .ag-cab h4{font:500 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#8ff0b5;display:flex;align-items:center;gap:8px}
 .ag-cab h4 i{width:8px;height:8px;border-radius:50%;background:var(--verde);animation:pulso 1.6s infinite}
 .ag-lista{display:flex;flex-direction:column;gap:8px}
@@ -78,7 +78,7 @@ header nav a:hover{color:#fff;background:rgba(255,255,255,.07)}
 .passo b{display:block;font-size:13px}
 .passo span{color:rgba(255,255,255,.65)}
 .passo.ok .ic{background:var(--verde);color:#08311a}
-.passo.base .ic{background:#7b2cff;color:#fff}
+.passo.base .ic{background:#6a1fd0;color:#fff}
 .passo.crm .ic{background:var(--laranja);color:var(--tinta)}
 .ag-nota{font-size:12.5px;color:rgba(255,255,255,.55);grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:10px}
 .ag-nota button{background:none;border:0;color:#8ff0b5;font:600 13px "Inter Tight",sans-serif;cursor:pointer;display:inline-flex;gap:6px;align-items:center}
@@ -99,7 +99,7 @@ header nav a:hover{color:#fff;background:rgba(255,255,255,.07)}
 .cards p{color:#5b5070;font-size:15.5px}
 .cards .ex{margin-top:12px;display:flex;flex-wrap:wrap;gap:6px}
 .cards .ex span{font:500 11px var(--mono);letter-spacing:.04em;background:var(--papel);border-radius:7px;padding:4px 8px;color:#4b4060}
-.escuro{background:var(--tinta);color:#fff}
+.escuro{background:linear-gradient(165deg,#4a03a2,#2b0163);color:#fff}
 .escuro .cab .rot{color:#8ff0b5}.escuro .cab h2 em{color:var(--verde)}.escuro .cab p{color:rgba(255,255,255,.75)}
 .etapas{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:e}
 .etapas li{border:1px solid var(--fio);border-radius:20px;padding:26px 22px;background:rgba(255,255,255,.04)}
@@ -120,11 +120,11 @@ header nav a:hover{color:#fff;background:rgba(255,255,255,.07)}
 .faq summary::after{content:"+";font-size:24px;line-height:1;color:var(--roxo)}
 .faq details[open] summary::after{content:"−"}
 .faq p{margin-top:10px;color:#4b4060}
-.final{padding:clamp(72px,10vw,110px) 0;text-align:center;background:linear-gradient(160deg,#0f3b26 0%,#1d1530 70%);color:#fff}
+.final{padding:clamp(72px,10vw,110px) 0;text-align:center;background:radial-gradient(600px 400px at 50% 110%,rgba(37,211,102,.3),transparent 65%),linear-gradient(160deg,#4a03a2,#2b0163);color:#fff}
 .final h2{max-width:17ch;margin:0 auto 16px}
 .final h2 em{font-style:normal;color:var(--verde)}
 .final p{color:rgba(255,255,255,.78);font-size:18px;margin-bottom:30px}
-footer{background:var(--tinta);color:#fff;border-top:1px solid var(--fio);padding:32px 0}
+footer{background:#22014f;color:#fff;border-top:1px solid var(--fio);padding:32px 0}
 footer .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px}
 footer nav{display:flex;flex-wrap:wrap;gap:8px 22px}
 footer nav a,footer small{font-size:14px;color:rgba(255,255,255,.7);text-decoration:none}
