@@ -1,3 +1,8 @@
 {
-  "trailingSlash": true
+  "trailingSlash": true,
+  "rewrites": [
+    { "source": "/agencia/", "destination": "/index.html" },
+    { "source": "/crm/", "destination": "/index.html" },
+    { "source": "/ia/", "destination": "/index.html" }
+  ]
 }
