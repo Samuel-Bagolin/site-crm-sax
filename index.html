@@ -319,6 +319,36 @@ html{scroll-padding-top:86px}
 @media (max-width:1060px){.g-janela{width:100%}.g-arte::before{right:-12%}}
 #v-crm .seg-fixo{top:84px;height:calc(100vh - 94px)}
 #v-crm .seg-palco{height:calc((var(--n) - 1) * 70vh + 100vh - 84px)}
+
+/* gráfico de faturamento */
+.g-fat{background:var(--tinta);color:#fff}
+.g-fat h2{font-size:clamp(36px,4.6vw,60px);font-weight:800;max-width:14ch}
+.g-fat h2 em{font-style:normal;color:var(--laranja)}
+.g-res-grade>*{min-width:0}
+.g-res-grade{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(32px,5vw,72px);align-items:center}
+.g-res-txt{font-size:18px;color:rgba(255,255,255,.78);margin:20px 0 28px;max-width:30em}
+.g-res-num{display:flex;align-items:center;gap:18px;margin-bottom:30px;padding:18px 0;border-top:1px solid rgba(255,255,255,.14);border-bottom:1px solid rgba(255,255,255,.14)}
+.g-res-num b{font:800 clamp(52px,6vw,76px)/1 var(--s-disp);color:var(--laranja);letter-spacing:-.03em}
+.g-res-num b{flex:none}
+.g-res-num span{font-size:15px;color:rgba(255,255,255,.75);max-width:22em}
+.g-graf{position:relative;margin:0;background:#fff;color:var(--tinta);border-radius:24px;padding:24px 24px 18px;box-shadow:0 40px 80px -40px rgba(0,0,0,.7)}
+.g-graf figcaption{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font:700 15px var(--s-corpo);margin-bottom:22px}
+.g-graf figcaption em{font:500 13px var(--s-corpo);font-style:normal;color:#615875;display:flex;align-items:center;gap:6px}
+.g-graf figcaption i{width:10px;height:10px;border-radius:3px;display:inline-block}.g-graf i.a{background:#d9d2e6}.g-graf i.d{background:var(--laranja);margin-left:10px}
+.g-graf ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:10px;height:280px;align-items:end;border-bottom:1px solid #e7e1ea;position:relative}
+.g-graf li{position:relative;height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center}
+.g-graf li i{display:block;width:100%;height:0;border-radius:8px 8px 3px 3px;background:#d9d2e6;transition:height 1s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--k,0) * 70ms)}
+.g-graf li.dep i{background:linear-gradient(180deg,#ff9a3d,var(--laranja))}
+.g-graf.vis li i{height:calc(var(--h) - 26px)}
+.g-graf li b{font:700 11px var(--s-corpo);color:#615875;margin-bottom:6px;white-space:nowrap;letter-spacing:-.02em}
+.g-graf li.dep b{color:var(--tinta)}
+.g-graf li span{position:absolute;bottom:-24px;font:500 12.5px var(--s-corpo);color:#7a7090}
+.g-marco{position:absolute;left:calc(24px + (100% - 48px) * .5 - 1px);top:66px;height:250px;border-left:2px dashed var(--roxo)}
+.g-marco span{position:absolute;left:8px;top:0;font:700 12px var(--s-corpo);color:var(--roxo);background:#f1eafb;padding:5px 9px;border-radius:999px;white-space:nowrap}
+.g-graf-nota{margin-top:34px!important;font-size:12.5px;color:#7a7090}
+@media (prefers-reduced-motion:reduce){.g-graf li i{height:calc(var(--h) - 26px);transition:none}}
+@media (max-width:1060px){.g-res-grade{grid-template-columns:1fr}}
+@media (max-width:560px){.g-graf{padding:18px 14px 14px}.g-graf ol{gap:5px;height:220px}.g-graf li b{font-size:9px}.g-marco{left:calc(14px + (100% - 28px) * .5 - 1px);height:190px;top:62px}.g-marco span{font-size:10.5px}}
 /* ===== cada solução (estilos originais, valendo só dentro da sua área) ===== */
 #v-agencia{color-scheme:dark;
   --noite:#140634; --noite-2:#1E0A4A; --noite-3:#2A1261;
@@ -1271,6 +1301,9 @@ html{scroll-padding-top:86px}
 .js #v-ia .rv{opacity:1;transform:none;transition:none}
 #v-ia .m,#v-ia .passo{animation:none}}
 /* ajustes da página única */
+/* a área de cada solução não pode prender a rolagem: o scroll dos segmentos do CRM usa position:sticky */
+#v-agencia,#v-crm,#v-ia{overflow:visible!important}
+html,body{overflow-x:clip}
 #v-crm .seg-fixo{top:84px;height:calc(100vh - 94px)}
 #v-crm .seg-palco{height:calc((var(--n) - 1) * 70vh + 100vh - 84px)}
 </style>
@@ -1384,10 +1417,20 @@ html{scroll-padding-top:86px}
   </div>
 </section>
 
-<section class="g-sec g-num">
-  <div class="s-wrap">
-    <h2 class="rv">Negócios que vão longe <em>não vão sozinhos</em>.</h2>
-    <ul class="rv"><li><b>3</b><span>soluções que se completam: Agência, CRM e IA</span></li><li><b>8</b><span>segmentos com telas e funis prontos no CRM</span></li><li><b>1</b><span>lugar para WhatsApp, Instagram e Facebook</span></li></ul>
+<section class="g-sec g-fat" id="g-resultado">
+  <div class="s-wrap g-res-grade">
+    <div class="rv">
+      <h2>Funil organizado, <em>faturamento que sobe</em>.</h2>
+      <p class="g-res-txt">Quando nenhum contato fica sem resposta e cada negócio tem responsável e prazo, a venda que antes escapava passa a fechar. O gráfico mostra como isso aparece no caixa.</p>
+      <div class="g-res-num"><b>+57%</b><span>de faturamento mensal entre o mês antes do CRM e o 4º mês de uso, no exemplo ao lado</span></div>
+      <a class="g-btn lar" href="/crm/">Organizar o meu funil</a>
+    </div>
+    <figure class="g-graf rv" aria-label="Gráfico de exemplo: faturamento mensal antes e depois do SAX CRM">
+      <figcaption><span>Faturamento mensal</span><em><i class="a"></i>Antes <i class="d"></i>Com o SAX CRM</em></figcaption>
+      <ol><li class="antes" style="--h:56.0%;--k:0"><b>R$ 42 mil</b><i></i><span>Jan</span></li><li class="antes" style="--h:60.0%;--k:1"><b>R$ 45 mil</b><i></i><span>Fev</span></li><li class="antes" style="--h:54.7%;--k:2"><b>R$ 41 mil</b><i></i><span>Mar</span></li><li class="antes" style="--h:58.7%;--k:3"><b>R$ 44 mil</b><i></i><span>Abr</span></li><li class="dep" style="--h:69.3%;--k:4"><b>R$ 52 mil</b><i></i><span>Mai</span></li><li class="dep" style="--h:77.3%;--k:5"><b>R$ 58 mil</b><i></i><span>Jun</span></li><li class="dep" style="--h:84.0%;--k:6"><b>R$ 63 mil</b><i></i><span>Jul</span></li><li class="dep" style="--h:92.0%;--k:7"><b>R$ 69 mil</b><i></i><span>Ago</span></li></ol>
+      <div class="g-marco"><span>Começou a usar o SAX CRM</span></div>
+      <p class="g-graf-nota">Exemplo ilustrativo com dados de demonstração, não é resultado de um cliente.</p>
+    </figure>
   </div>
 </section>
 
@@ -2162,7 +2205,7 @@ html{scroll-padding-top:86px}
 (function(){
   var WA='https://wa.me/5541991998738?text=';
   var V={
-    grupo:{rot:'GRUPO',path:'/',titulo:'Grupo SAX | Agência, CRM e IA para o seu negócio crescer',desc:'Grupo SAX: SAX Agência para anunciar pelo WhatsApp, SAX CRM para organizar clientes e vendas e SAX IA para criar agentes de inteligência artificial para o seu negócio.',cta:['Fale com a gente',WA+encodeURIComponent('Oi! Vi o site do Grupo SAX e quero conversar.')],duv:'#g-duvidas',sec:[['#g-solucoes','Soluções'],['#g-segmentos','Segmentos'],['#g-caminho','Como funciona'],['#g-duvidas','Dúvidas']]},
+    grupo:{rot:'GRUPO',path:'/',titulo:'Grupo SAX | Agência, CRM e IA para o seu negócio crescer',desc:'Grupo SAX: SAX Agência para anunciar pelo WhatsApp, SAX CRM para organizar clientes e vendas e SAX IA para criar agentes de inteligência artificial para o seu negócio.',cta:['Fale com a gente',WA+encodeURIComponent('Oi! Vi o site do Grupo SAX e quero conversar.')],duv:'#g-duvidas',sec:[['#g-solucoes','Soluções'],['#g-segmentos','Segmentos'],['#g-caminho','Como funciona'],['#g-resultado','Resultado'],['#g-duvidas','Dúvidas']]},
     agencia:{rot:'AGÊNCIA',path:'/agencia/',titulo:'SAX Agência | Gestor de tráfego pelo WhatsApp',desc:'SAX Agência é o gestor de tráfego que trabalha pelo WhatsApp. Você manda um áudio e a campanha de Meta Ads sai pronta, por menos do que custa uma agência.',cta:['Chamar no WhatsApp',WA+encodeURIComponent('Oi! Vi o site da SAX Agência e quero entender como funciona.')],duv:'#ag-duvidas',sec:[['#ag-preco','Preço'],['#ag-como','Como funciona'],['#ag-confirmo','Segurança'],['#ag-para-quem','Para quem é'],['#ag-duvidas','Dúvidas']]},
     crm:{rot:'CRM',path:'/crm/',titulo:'SAX CRM | O CRM que fala a língua do seu negócio',desc:'CRM para imobiliária, loja de veículos, odontologia, clínica terapêutica, barbearia, estética, restaurante e empresas de serviço, com WhatsApp, Instagram, agenda e financeiro.',cta:['Criar conta','https://app.gruposax.com.br/cadastro'],duv:'#duvidas',sec:[['#segmentos','Segmentos'],['#whatsapp','WhatsApp'],['#instagram','Instagram'],['#automacao','Automações'],['#site','Site próprio'],['#planos','Planos'],['#duvidas','Dúvidas']]},
     ia:{rot:'IA',path:'/ia/',titulo:'SAX IA | Agentes e modelos de linguagem para o seu negócio',desc:'SAX IA cria agentes de inteligência artificial e modelos de linguagem ajustados ao seu negócio: atendimento no WhatsApp, qualificação de clientes, agendamento e automação da rotina.',cta:['Quero um agente',WA+encodeURIComponent('Oi! Vi o site da SAX IA e quero entender como um agente de IA pode ajudar no meu negócio.')],duv:'#ia-duvidas',sec:[['#ia-agentes','Agentes'],['#ia-como','Como funciona'],['#ia-seguranca','Segurança'],['#ia-duvidas','Dúvidas']]}
