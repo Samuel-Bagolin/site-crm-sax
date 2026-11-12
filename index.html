@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Grupo SAX | Agência, CRM e IA para o seu negócio crescer</title>
 <meta name="description" content="Grupo SAX: SAX Agência para anunciar pelo WhatsApp, SAX CRM para organizar clientes e vendas e SAX IA para criar agentes de inteligência artificial para o seu negócio.">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#4a03a2">
 <meta property="og:title" content="Grupo SAX | Agência, CRM e IA">
 <meta property="og:description" content="Atrair o cliente, organizar a venda e automatizar a rotina. Escolha por onde começar.">
 <meta property="og:type" content="website">
@@ -102,6 +102,34 @@ html[data-vista=grupo] #v-grupo,html[data-vista=agencia] #v-agencia,html[data-vi
 .s-rod-base a{color:inherit}
 @media (max-width:900px){.s-rod-grade{grid-template-columns:1fr}.s-rod-cols{grid-template-columns:1fr 1fr}}
 
+
+/* topo nas cores da SAX */
+html{--s-cl:#ffb878}
+html[data-vista=crm]{--s-cl:#ffb878}
+html[data-vista=agencia]{--s-cl:#ff9a3d}
+html[data-vista=ia]{--s-cl:#4ee08a}
+.s-topo{background:rgba(74,3,162,.96);border-bottom:1px solid rgba(255,255,255,.12)}
+.s-marca{color:#fff}
+.s-marca-nome{color:var(--s-cl);border-left-color:rgba(255,255,255,.28)}
+.s-menu>a,.s-sub>button{color:rgba(255,255,255,.86)}
+.s-menu>a:hover,.s-sub>button:hover,.s-sub.aberto>button{color:#fff;background:rgba(255,255,255,.1)}
+.s-entrar{color:#fff}.s-entrar:hover{background:rgba(255,255,255,.1)}
+.s-btn{background:var(--s-laranja);color:var(--s-tinta);box-shadow:0 4px 0 #b85500}
+.s-btn:hover{background:#ff8f26;color:var(--s-tinta)}
+.s-abre{background:transparent;border-color:rgba(255,255,255,.3)}.s-abre span{background:#fff}
+.s-secoes{background:#3a0285;border-top:1px solid rgba(255,255,255,.1)}
+.s-secoes .s-onde{color:var(--s-cl);border-right-color:rgba(255,255,255,.2)}
+.s-secoes a{color:rgba(255,255,255,.72)}
+.s-secoes a:hover{color:#fff;background:rgba(255,255,255,.08)}
+.s-secoes a.on{color:#fff;box-shadow:inset 0 -2px 0 var(--s-laranja)}
+#progresso{background:var(--s-laranja)}
+.s-rod .s-btn{box-shadow:none}
+@media (max-width:1060px){
+  .s-menu{background:#3a0285;border-bottom-color:rgba(255,255,255,.12)}
+  .s-menu>a,.s-sub>button{border-bottom-color:rgba(255,255,255,.12)}
+  .s-painel,.s-p-sol,.s-p-seg{background:#fff;padding:6px}
+}
+
 /* animação de entrada comum */
 .js .rv{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
 .js .rv.vis{opacity:1;transform:none}
@@ -111,7 +139,7 @@ html[data-vista=grupo] #v-grupo,html[data-vista=agencia] #v-agencia,html[data-vi
 #v-grupo{--tinta:#17112a;--roxo:#4a03a2;--laranja:#ff7a00;--papel:#f6f2ec;font-family:var(--s-corpo);color:var(--tinta);line-height:1.55}
 :where(#v-grupo) :where(h1,h2,h3){font-family:var(--s-disp);letter-spacing:-.025em;line-height:1.02;margin:0;text-wrap:balance}
 :where(#v-grupo) :where(p){margin:0}
-#v-grupo a:not([class]){color:var(--roxo);text-underline-offset:3px}
+#v-grupo .g-faq a:not([class]){color:var(--roxo);text-underline-offset:3px}
 .g-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 26px;border-radius:999px;background:var(--tinta);color:#fff;font:600 16px var(--s-corpo);text-decoration:none;white-space:nowrap;transition:transform .2s,background .2s}
 .g-btn:hover{transform:translateY(-2px);background:#000}
 .g-btn svg{width:18px;height:18px}
@@ -272,6 +300,15 @@ html[data-vista=grupo] #v-grupo,html[data-vista=agencia] #v-agencia,html[data-vi
 }
 @media (max-width:560px){.g-seg-card{min-height:0}.g-seg-tela{margin-top:6px}.g-mot{grid-template-columns:1fr}.g-hero h1 em{white-space:normal}.g-trilho li{flex-basis:84vw}}
 
+/* início nas cores da SAX */
+.g-hero{background:linear-gradient(170deg,#4a03a2 0%,#3a0285 60%,#2b0163 100%);color:#fff}
+.g-hero h1{color:#fff}.g-hero h1 em{color:var(--laranja)}
+.g-hero .g-sub{color:rgba(255,255,255,.84)}
+.g-hero .g-btn{background:var(--laranja);color:var(--tinta)}.g-hero .g-btn:hover{background:#ff8f26}
+.g-hero .g-btn.cont{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.45)}.g-hero .g-btn.cont:hover{box-shadow:inset 0 0 0 1.5px #fff}
+.g-hero .g-trio{border-top-color:rgba(255,255,255,.18)}
+#v-grupo .g-hero .g-trio a{color:#fff}.g-hero .g-trio a span{border-left-color:rgba(255,255,255,.3)}.g-hero .g-trio a:hover span{color:#ffb878}
+.g-arte{background:#22014f;box-shadow:0 40px 80px -40px rgba(0,0,0,.6)}
 /* ===== cada solução (estilos originais, valendo só dentro da sua área) ===== */
 #v-agencia{color-scheme:dark;
   --noite:#140634; --noite-2:#1E0A4A; --noite-3:#2A1261;
@@ -1265,7 +1302,7 @@ html[data-vista=grupo] #v-grupo,html[data-vista=agencia] #v-agencia,html[data-vi
 <section class="g-hero">
   <div class="s-wrap">
     <div>
-      <h1>Atrair, vender e <em>automatizar<svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M3 14 C 70 4, 140 4, 297 12" fill="none" stroke="#ff7a00" stroke-width="6" stroke-linecap="round"/></svg></em>.</h1>
+      <h1>Atrair, vender e <em>automatizar<svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M3 14 C 70 4, 140 4, 297 12" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/></svg></em>.</h1>
       <p class="g-sub">Três soluções que trabalham juntas para o seu negócio crescer: anúncios que trazem clientes, um CRM que não deixa ninguém escapar e agentes de IA que cuidam da rotina.</p>
       <div class="g-acoes">
         <a class="g-btn" href="#g-solucoes">Escolher minha solução</a>
